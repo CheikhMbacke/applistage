@@ -347,7 +347,14 @@ public class AbonneRegister extends javax.swing.JFrame {
                     }
                     if(existe){
                         errorMessage("le numéro de compteur est déja pris",msg);
-                        jComboBox.setToolTipText("");
+                        Statement statement=conn.createStatement();
+                        ResultSet rst=statement.executeQuery("SELECT idAbonne FROM compteur where idAbonne=0");
+                        if(!rst.first()){
+                            int valReturn=JOptionPane.showConfirmDialog(null, "Plus de compteur disponible,voulez-vous en créer un nouveau?",
+                                    "Nouveau Compteur",JOptionPane.YES_NO_OPTION);
+                            if(valReturn==0)
+                              new CompterRegister().setVisible(true);
+                        }
                     }else{
                         PreparedStatement ps=conn.prepareStatement("INSERT INTO abonne (nom,prenom,adresse,cin,tel,numCompteur)"
                             +" VALUES (?,?,?,?,?,?)");
@@ -373,13 +380,15 @@ public class AbonneRegister extends javax.swing.JFrame {
                         conn.close();
                         //message
                         JOptionPane.showConfirmDialog(null, "Abonnement réussie",
-                                    "Chaamps invalide",JOptionPane.YES_OPTION);
+                                    "Abonnement",JOptionPane.YES_OPTION);
+                        msg.setText("Enregistrement réussie");
+                        msg.setForeground(Color.green);
                         nom2.setText("");
                         prenom.setText("");
                         addr.setText("");
                         cin.setText("");
                         tel.setText("");
-                        jComboBox.setToolTipText("");
+                        jComboBox.setToolTipText(" ");
                     }
                 } catch (SQLException ex) {
                // Logger.getLogger(AbonneRegister.class.getName()).log(Level.SEVERE, null, ex);
@@ -446,7 +455,6 @@ public class AbonneRegister extends javax.swing.JFrame {
         } catch (SQLException ex) {
             Logger.getLogger(AbonneRegister.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
     }//GEN-LAST:event_jComboBoxMouseClicked
 
     /**

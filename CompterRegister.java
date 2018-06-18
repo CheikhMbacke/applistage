@@ -228,6 +228,8 @@ public class CompterRegister extends javax.swing.JFrame {
                     ps.setInt(2, defaultValue);
                     ps.executeUpdate();
                     JtextField.setText("");
+                    JOptionPane.showConfirmDialog(null, "Enregistrement réussie",
+                                    "Enregistrer un compteur",JOptionPane.YES_OPTION);
                     msg.setText("Enregistrement réussie");
                     msg.setForeground(Color.green);
                 }
