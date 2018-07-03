@@ -19,11 +19,11 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author Cheikh Mbacké
  */
-public class CompteurAffectés extends javax.swing.JFrame {
+public class ListeAbonne extends javax.swing.JFrame {
 
     /** Creates new form CompteurAffectés */
-    public CompteurAffectés() {
-        initComponents(); 
+    public ListeAbonne() {
+        initComponents();
     }
 
     /** This method is called from within the constructor to
@@ -44,7 +44,6 @@ public class CompteurAffectés extends javax.swing.JFrame {
         jTable1 = new javax.swing.JTable();
         jPanel3 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -115,8 +114,8 @@ public class CompteurAffectés extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Calibri", 0, 16)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(7, 27, 87));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fcca/image/baseline_offline_bolt_black_24dp.png"))); // NOI18N
-        jLabel2.setText("Compteurs Affectés");
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fcca/image/baseline_account_box_black_24dp.png"))); // NOI18N
+        jLabel2.setText("Afficher les abonnés");
         jLabel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(7, 27, 87), 2));
         jLabel2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -125,33 +124,17 @@ public class CompteurAffectés extends javax.swing.JFrame {
             }
         });
 
-        jLabel3.setFont(new java.awt.Font("Calibri", 0, 16)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(7, 27, 87));
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fcca/image/baseline_offline_bolt_black_24dp.png"))); // NOI18N
-        jLabel3.setText("Compteurs non Affectés");
-        jLabel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(7, 27, 87), 2));
-        jLabel3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel3MouseClicked(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 185, Short.MAX_VALUE)
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(133, 133, 133)
+                .addGap(224, 224, 224)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -161,7 +144,7 @@ public class CompteurAffectés extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 65, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 668, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -216,40 +199,14 @@ public class CompteurAffectés extends javax.swing.JFrame {
                 row[3]=rs.getString("cin");
                 model.addRow(row);
           }
+             /*int selectedRow=jTable1.getSelectedRow();
+             if(selectedRow!=-1){
+                 row[selectedRow].
+             }*/
         } catch (SQLException ex) {
-            Logger.getLogger(CompteurAffectés.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ListeAbonne.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jLabel2MouseClicked
-
-    private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
-        // TODO add your handling code here:
-        Connection conn;
-        try {
-            conn = ConnectBD.BD();
-            Statement st =conn.createStatement();
-            String sql="SELECT numCompteur,idAbonne FROM compteur where idAbonne=0";
-            ResultSet rs=st.executeQuery(sql);
-            //TableSet
-            jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "N° Compteur", "idAbonne"
-            }
-            ));
-            //END TableSet
-            DefaultTableModel model1=(DefaultTableModel) jTable1.getModel ();
-            Object[] row = new Object[4];
-             while(rs.next()){
-                row[0]=rs.getString("numCompteur");
-                row[1]=rs.getString("idAbonne");
-                model1.addRow(row);
-          }
-        } catch (SQLException ex) {
-            Logger.getLogger(CompteurAffectés.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_jLabel3MouseClicked
 
     private void exitLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitLabelMouseClicked
         // TODO add your handling code here:
@@ -279,20 +236,21 @@ public class CompteurAffectés extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(CompteurAffectés.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ListeAbonne.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(CompteurAffectés.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ListeAbonne.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(CompteurAffectés.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ListeAbonne.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(CompteurAffectés.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ListeAbonne.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new CompteurAffectés().setVisible(true);
+                new ListeAbonne().setVisible(true);
             }
         });
     }
@@ -302,7 +260,6 @@ public class CompteurAffectés extends javax.swing.JFrame {
     private javax.swing.JLabel exitLabel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;

@@ -20,6 +20,7 @@
     <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
     <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
     <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+    <AuxValue name="designerSize" type="java.awt.Dimension" value="-84,-19,0,5,115,114,0,18,106,97,118,97,46,97,119,116,46,68,105,109,101,110,115,105,111,110,65,-114,-39,-41,-84,95,68,20,2,0,2,73,0,6,104,101,105,103,104,116,73,0,5,119,105,100,116,104,120,112,0,0,2,84,0,0,3,105"/>
   </AuxValues>
 
   <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout"/>
@@ -39,40 +40,46 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                      <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace min="-2" pref="177" max="-2" attributes="0"/>
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace pref="78" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
                           <Component id="jCheckBox1" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="msg" min="-2" pref="309" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
                           <Component id="jButton1" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="jButton2" min="-2" pref="90" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
                       </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="96" max="-2" attributes="0"/>
-                          <Component id="jScrollPane2" min="-2" pref="678" max="-2" attributes="0"/>
+                      <Group type="102" alignment="1" attributes="0">
+                          <Component id="jScrollPane2" min="-2" pref="719" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="76" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace pref="99" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
                   <Component id="jScrollPane2" min="-2" pref="497" max="-2" attributes="0"/>
-                  <EmptySpace pref="16" max="32767" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="1" attributes="0">
-                          <Component id="jCheckBox1" min="-2" pref="33" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="1" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jButton1" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
                               <Component id="jButton2" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
                           </Group>
                       </Group>
+                      <Group type="102" attributes="0">
+                          <Component id="jCheckBox1" min="-2" pref="33" max="-2" attributes="0"/>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      </Group>
+                      <Component id="msg" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -96,10 +103,23 @@
           <SubComponents>
             <Component class="javax.swing.JEditorPane" name="jEditorPane1">
               <Properties>
+                <Property name="editable" type="boolean" value="false"/>
+                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                  <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+                    <TitledBorder justification="1" position="2" title="Licence d&apos;abonnement">
+                      <Border PropertyName="innerBorder" info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                        <LineBorder thickness="2">
+                          <Color PropertyName="color" blue="99" green="99" red="99" type="rgb"/>
+                        </LineBorder>
+                      </Border>
+                      <Font PropertyName="font" name="Calibri Light" size="16" style="1"/>
+                    </TitledBorder>
+                  </Border>
+                </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Calibri Light" size="16" style="0"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Toute personne physique ou morale d&#xe9;sirant souscrire un Abonnement d&#xe9;pose au niveau de Senelec&#xa; une Demande d&#x2019;Abonnement avec toutes les pi&#xe8;ces requises et fournit tous les renseignements &#xa;n&#xe9;cessaires pr&#xe9;vus &#xe0; l&#x2019;Annexe V. Dans le cas o&#xf9; les installations int&#xe9;rieures ne sont pas conformes &#xa;aux normes &#xe9;tablies par la r&#xe9;glementation en vigueur,Senelec &#xa;se reserve le droit de refuser l&#x2019;Abonnement. &#xa;&#xa;&gt;Article 3 Lorsque l&#x2019;&#xe9;lectricit&#xe9; est destin&#xe9;e &#xe0; un usage domestique, une seule alimentation &#xa;(un seul compteur) est fournie pour chaque logement.&#xa;&#xa;&gt;Article 4 Lorsque l&#x2019;&#xe9;lectricit&#xe9; est destin&#xe9;e &#xe0; un usage professionnel, une seule alimentation est&#xa; fournie &#xa;pour une m&#xea;me personne physique ou morale exer&#xe7;ant sur&#xa;un m&#xea;me titre d&#x2019;occupation la m&#xea;me activit&#xe9;.&#xa;&#xa;&gt;Article 5 La Demande d&apos;Abonnement est accept&#xe9;e conform&#xe9;ment aux dispositions pr&#xe9;vues aux&#xa; &#xab; Conditions G&#xe9;n&#xe9;rales D&apos;abonnement pour la Fourniture d&#x2019;&#xe9;lectricit&#xe9; &#xbb; en Annexe V&#xa;&#xa;&gt;Article 6 Le Demandeur paie les Frais de Dossier d&#x2019;Abonnement tels que d&#xe9;finis en Annexe I &#xa;&#xab; Co&#xfb;ts et Financements des Prestations &#xbb; du pr&#xe9;sent R&#xe8;glement. Senelec proc&#xe8;de &#xe0; la visite des &#xa;installations du Demandeur dans les d&#xe9;lais fix&#xe9;s par les Normes et Obligations en vigueur.A d&#xe9;faut,&#xa; Senelec paie au client les incitations contractuelles pr&#xe9;vues &#xe0; cet effet&#xa;&#xa;&gt;Article 7 Le Demandeur est invit&#xe9; &#xe0; s&#x2019;acquitter des Frais d&#x2019;Abonnement lorsque son installation &#xa;est conforme pour accueillir les Appareils de mesure. Les Demandes d&#x2019;Abonnement non finalis&#xe9;es&#xa; du fait du Demandeur sont annul&#xe9;es apr&#xe8;s une p&#xe9;riode de six (6) mois &#xe0; compter de la date&#xa; d&#x2019;introduction de la demande ou de la date &#xe0; laquelle&#xa;le paiement des frais d&#x2019;abonnement &#xe9;tait exigible.&#xa;&#xa;&gt;Article 8 Les Frais de Dossier d&#x2019;Abonnement exigibles au d&#xe9;p&#xf4;t de la&#xa;Demande d&apos;Abonnement ne sont pas remboursables lorsque&#xa;la Demande d&#x2019;Abonnement est annul&#xe9;e du fait du&#xa;Demandeur. Le Client qui entend renouveler la proc&#xe9;dure&#xa;d&#x2019;Abonnement introduit une demande dans les co nditions&#xa;fix&#xe9;es par les articles ci-dessus.&#xa;L&#x2019;Abonnement est conclu d&#xe8;s le consentement donn&#xe9; par&#xa;Senelec au Demandeur et le paiement par ce dernier de s&#xa;Frais d&#x2019;Abonnement tels que d&#xe9;finis en Annexe I &#xab; Co&#xfb;ts et&#xa;Financements des Prestations &#xbb; du pr&#xe9;sent R&#xe8;glement.&#xa;Le contrat d&#x2019;Abonnement est sign&#xe9; par le Client ou son&#xa;repr&#xe9;sentant d&#xfb;ment mandat&#xe9; et le repr&#xe9;sentant de Senelec .&#xa;&#xa;&gt;Article 9 Apr&#xe8;s la conclusion d&#x2019;un Abonnement, Senelec proc&#xe8;de &#xe0; la&#xa;pose des Appareils de mesure chez le Client dans les d&#xe9;lais&#xa;fix&#xe9;s par les Normes et obligations en vigueur."/>
+                <Property name="text" type="java.lang.String" value="-&gt; Article 1: Toute fourniture d&apos;&#xe9;nergie &#xe9;lectrique par Senelec est subordonn&#xe9;e &#xe0; la conclusion &#xa;d&apos;un Abonnement entre le Client et Senelec.L&#x2019;abonnement est conclu soit en Post-Paiement soit &#xa;en Pr&#xe9;paiement  suivant la  Puissance  Souscrite  par  le  Client. &#xa;&#xa;-&gt; Article 2: Toute personne physique ou morale d&#xe9;sirant souscrire un Abonnement  d&#xe9;pose au&#xa;niveau de Senelec une Demande d&#x2019;Abonnement avec toutes les pi&#xe8;ces requises et fournit tous&#xa;les renseignements n&#xe9;cessaires pr&#xe9;vus &#xe0; l&#x2019;Annexe V. Dans  le cas o&#xf9; les  installations  int&#xe9;rieures&#xa;ne  sont  pas  conformes aux  normes &#xe9;tablies  par  la  r&#xe9;glementation en  vigueur,&#xa;Senelec se  reserve  le  droit de refuser l&#x2019;Abonnement.&#xa;&#xa;-&gt; Article 3: Lorsque l&#x2019;&#xe9;lectricit&#xe9; est destin&#xe9;e &#xe0; un usage domestique, une seule alimentation &#xa;(un seul compteur)  est fournie pour chaque logement.  &#xa;&#xa;-&gt; Article 4: Lorsque l&#x2019;&#xe9;lectricit&#xe9; est destin&#xe9;e &#xe0; un usage professionnel, une seule alimentation &#xa;est fournie  pour une m&#xea;me personne physique ou morale exer&#xe7;ant sur un m&#xea;me titre &#xa;d&#x2019;occupation la m&#xea;me activit&#xe9;.&#xa;    &#xa;-&gt;Article 5: La Demande d&apos;Abonnement est accept&#xe9;e conform&#xe9;ment aux  dispositions  pr&#xe9;vues &#xa;aux &#xab; Conditions G&#xe9;n&#xe9;rales D&apos;abonnement pour la Fourniture d&#x2019;&#xe9;lectricit&#xe9;&#xbb; en Annexe V. &#xa;&#xa;-&gt;Article 6: Le Demandeur  paie les Frais de Dossier d&#x2019;Abonnement tels que d&#xe9;finis en Annexe I &#xa;&#xab; Co&#xfb;ts et Financements des Prestations &#xbb; du pr&#xe9;sent R&#xe8;glement. Senelec proc&#xe8;de &#xe0; la visite&#xa; des installations du Demandeur dans les d&#xe9;lais fix&#xe9;s par les Normes et Obligations en vigueur.&#xa;A d&#xe9;faut, Senelec paie au client les incitations contractuelles pr&#xe9;vues &#xe0; cet effet.   &#xa; &#xa;-&gt;Article 7: Le Demandeur est invit&#xe9; &#xe0; s&#x2019;acquitter des Frais d&#x2019;Abonnement lorsque son installation &#xa;est conforme pour accueillir les Appareils de mesure. Les Demandes d&#x2019;Abonnement non finalis&#xe9;es &#xa;du fait du Demandeur sont annul&#xe9;es apr&#xe8;s une p&#xe9;riode de six (6) mois &#xe0; compter de la date &#xa;d&#x2019;introduction de la demande  ou de la date &#xe0; laquelle le paiement des frais d&#x2019;abonnement  &#xe9;tait exigible. &#xa;&#xa;-&gt;Article 8: Les Frais de Dossier d&#x2019;Abonnement exigibles au d&#xe9;p&#xf4;t de la Demande d&apos;Abonnement&#xa;ne sont pas remboursables lorsque la Demande d&#x2019;Abonnement est annul&#xe9;e du fait du Demandeur. &#xa;Le Client qui  entend  renouveler la proc&#xe9;dure  d&#x2019;Abonnement  introduit  une demande  dans les &#xa;conditions fix&#xe9;es par les articles  ci-dessus. L&#x2019;Abonnement est conclu d&#xe8;s le consentement donn&#xe9; &#xa;par Senelec au Demandeur et le paiement par ce dernier des Frais d&#x2019;Abonnement tels que d&#xe9;finis &#xa;en Annexe I &#xab; Co&#xfb;ts et Financements des Prestations &#xbb; du pr&#xe9;sent R&#xe8;glement.  Le  contrat d&#x2019;Abonnement &#xa;est sign&#xe9; par le Client ou son repr&#xe9;sentant d&#xfb;ment mandat&#xe9; et le repr&#xe9;sentant de Senelec. &#xa;&#xa;-&gt;Article 9: Apr&#xe8;s la conclusion d&#x2019;un Abonnement, Senelec proc&#xe8;de &#xe0; la pose des Appareils de mesure &#xa;chez le Client dans les d&#xe9;lais fix&#xe9;s par les Normes  et obligations  en vigueur. "/>
               </Properties>
             </Component>
           </SubComponents>
@@ -158,8 +178,23 @@
             </Property>
           </Properties>
           <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton2MouseClicked"/>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
           </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="msg">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Calibri Light" size="14" style="1"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="0" green="0" red="cc" type="rgb"/>
+            </Property>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
         </Component>
       </SubComponents>
     </Container>
@@ -181,7 +216,7 @@
               <Group type="102" alignment="0" attributes="0">
                   <Component id="jLabel1" min="-2" pref="142" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
-                  <Component id="exitLabel1" min="-2" pref="34" max="-2" attributes="0"/>
+                  <Component id="backLabel" min="-2" pref="34" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="exitLabel" min="-2" pref="34" max="-2" attributes="0"/>
               </Group>
@@ -191,7 +226,7 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Component id="jLabel1" alignment="1" min="-2" pref="38" max="-2" attributes="0"/>
               <Component id="exitLabel" alignment="0" min="-2" pref="35" max="-2" attributes="0"/>
-              <Component id="exitLabel1" alignment="0" min="-2" pref="35" max="-2" attributes="0"/>
+              <Component id="backLabel" alignment="0" min="-2" pref="35" max="-2" attributes="0"/>
           </Group>
         </DimensionLayout>
       </Layout>
@@ -203,7 +238,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="exitLabel1">
+        <Component class="javax.swing.JLabel" name="backLabel">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="18" style="0"/>
@@ -220,7 +255,7 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="exitLabel1MouseClicked"/>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="backLabelMouseClicked"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="exitLabel">

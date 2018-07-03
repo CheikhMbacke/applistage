@@ -50,7 +50,7 @@ public class CompterRegister extends javax.swing.JFrame {
         exitLabel = new javax.swing.JLabel();
         JtextField = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        exitLabel1 = new javax.swing.JLabel();
+        backLabel = new javax.swing.JLabel();
 
         jLabel1.setText("jLabel1");
 
@@ -63,7 +63,7 @@ public class CompterRegister extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Calibri Light", 1, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fcca/image/baseline_ev_station_white_24dp.png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fcca/image/baseline_offline_bolt_white_24dp2.png"))); // NOI18N
         jLabel2.setText("Numéro du Compteur");
         jLabel2.setToolTipText("");
         jLabel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
@@ -111,14 +111,14 @@ public class CompterRegister extends javax.swing.JFrame {
         jLabel4.setText("N° CPT");
         jLabel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
 
-        exitLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        exitLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        exitLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        exitLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fcca/image/baseline_arrow_back_white_24dp.png"))); // NOI18N
-        exitLabel1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        exitLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+        backLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        backLabel.setForeground(new java.awt.Color(255, 255, 255));
+        backLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        backLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fcca/image/baseline_arrow_back_white_24dp.png"))); // NOI18N
+        backLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        backLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                exitLabel1MouseClicked(evt);
+                backLabelMouseClicked(evt);
             }
         });
 
@@ -132,7 +132,7 @@ public class CompterRegister extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                            .addComponent(exitLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(backLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addComponent(exitLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
@@ -156,7 +156,7 @@ public class CompterRegister extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(exitLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(exitLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(backLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 156, Short.MAX_VALUE)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -227,11 +227,11 @@ public class CompterRegister extends javax.swing.JFrame {
                     int defaultValue = 0;
                     ps.setInt(2, defaultValue);
                     ps.executeUpdate();
+                    
                     JtextField.setText("");
-                    JOptionPane.showConfirmDialog(null, "Enregistrement réussie",
-                                    "Enregistrer un compteur",JOptionPane.YES_OPTION);
-                    msg.setText("Enregistrement réussie");
-                    msg.setForeground(Color.green);
+                    JOptionPane.showMessageDialog(null, "Compteur enregistré avec succés");
+                    //msg.setText("Enregistrement réussie");
+                    //msg.setForeground(Color.green);
                 }
        
             } catch (SQLException ex) {
@@ -246,16 +246,18 @@ public class CompterRegister extends javax.swing.JFrame {
 
     private void exitLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitLabelMouseClicked
         // TODO add your handling code here:
-             CloseFrame.close(exitLabel);
+             CloseFrame.close(exitLabel,this);
     }//GEN-LAST:event_exitLabelMouseClicked
 
     private void JtextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JtextFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_JtextFieldActionPerformed
 
-    private void exitLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitLabel1MouseClicked
+    private void backLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backLabelMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_exitLabel1MouseClicked
+        this.setVisible(false);
+        new Dashboard().setVisible(true);
+    }//GEN-LAST:event_backLabelMouseClicked
 
     /**
      * @param args the command line arguments
@@ -295,8 +297,8 @@ public class CompterRegister extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField JtextField;
+    private javax.swing.JLabel backLabel;
     private javax.swing.JLabel exitLabel;
-    private javax.swing.JLabel exitLabel1;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

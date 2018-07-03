@@ -26,7 +26,7 @@ public class FCCA {
                     acc.loadingBar.setValue(i);
                     if(i==100){
                         acc.setVisible(false);
-                        new AbonneRegister().setVisible(true);
+                        new Dashboard().setVisible(true);
                      }
                 }
               }catch (Exception ex) {

@@ -5,6 +5,8 @@
  */
 package fcca;
 
+import javax.swing.JPanel;
+
 /**
  *
  * @author Cheikh Mbacké
@@ -16,6 +18,8 @@ public class Dashboard extends javax.swing.JFrame {
      */
     public Dashboard() {
         initComponents();
+        settingVisible(abonnePan, compteurPan, afficheCompteurPan,listeAbonnePan, consommationPan, facturePan,
+                false,false, false,false, false,false);
 
     }
 
@@ -30,22 +34,723 @@ public class Dashboard extends javax.swing.JFrame {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
         buttonGroup2 = new javax.swing.ButtonGroup();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        exitLabel = new javax.swing.JLabel();
+        backLabel = new javax.swing.JLabel();
+        jPanel4 = new javax.swing.JPanel();
+        facture = new javax.swing.JLabel();
+        accueil = new javax.swing.JLabel();
+        abonnement = new javax.swing.JLabel();
+        createCompteur = new javax.swing.JLabel();
+        compteur = new javax.swing.JLabel();
+        listeAbonne = new javax.swing.JLabel();
+        consommation = new javax.swing.JLabel();
+        accueilPan = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        consommationPan = new javax.swing.JPanel();
+        logoCompteur = new javax.swing.JLabel();
+        compteurLab = new javax.swing.JLabel();
+        abonnePan = new javax.swing.JPanel();
+        logoCompteur1 = new javax.swing.JLabel();
+        compteurLab1 = new javax.swing.JLabel();
+        facturePan = new javax.swing.JPanel();
+        logoCompteur2 = new javax.swing.JLabel();
+        compteurLab2 = new javax.swing.JLabel();
+        compteurPan = new javax.swing.JPanel();
+        logoCompteur3 = new javax.swing.JLabel();
+        compteurLab3 = new javax.swing.JLabel();
+        listeAbonnePan = new javax.swing.JPanel();
+        logoCompteur7 = new javax.swing.JLabel();
+        compteurLab7 = new javax.swing.JLabel();
+        afficheCompteurPan = new javax.swing.JPanel();
+        logoCompteur8 = new javax.swing.JLabel();
+        compteurLab8 = new javax.swing.JLabel();
+        accueilLab = new javax.swing.JLabel();
+        indication = new javax.swing.JLabel();
+        copyright = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
+        setResizable(false);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 681, Short.MAX_VALUE)
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanel2MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jPanel2MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jPanel2MouseExited(evt);
+            }
+        });
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fcca/image/logo.PNG"))); // NOI18N
+
+        exitLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        exitLabel.setForeground(new java.awt.Color(255, 255, 255));
+        exitLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        exitLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fcca/image/baseline_close_black_24dp.png"))); // NOI18N
+        exitLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        exitLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                exitLabelMouseClicked(evt);
+            }
+        });
+
+        backLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        backLabel.setForeground(new java.awt.Color(255, 255, 255));
+        backLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        backLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fcca/image/baseline_arrow_back_black_24dp.png"))); // NOI18N
+        backLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        backLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                backLabelMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 677, Short.MAX_VALUE)
+                .addComponent(backLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(exitLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 333, Short.MAX_VALUE)
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(exitLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
+                    .addComponent(backLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE))
+                .addGap(0, 5, Short.MAX_VALUE))
+            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
         );
+
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 861, 40));
+
+        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        facture.setBackground(new java.awt.Color(7, 27, 87));
+        facture.setFont(new java.awt.Font("Calibri Light", 0, 18)); // NOI18N
+        facture.setForeground(new java.awt.Color(7, 27, 87));
+        facture.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        facture.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fcca/image/baseline_euro_symbol_black_24dp.png"))); // NOI18N
+        facture.setText("Facturation");
+        facture.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        facture.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                factureMouseClicked(evt);
+            }
+        });
+        jPanel4.add(facture, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 390, 240, 48));
+
+        accueil.setBackground(new java.awt.Color(7, 27, 87));
+        accueil.setFont(new java.awt.Font("Calibri Light", 0, 18)); // NOI18N
+        accueil.setForeground(new java.awt.Color(7, 27, 87));
+        accueil.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        accueil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fcca/image/baseline_home_black_24dp.png"))); // NOI18N
+        accueil.setText("Accueil");
+        accueil.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        accueil.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                accueilMouseClicked(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                accueilMousePressed(evt);
+            }
+        });
+        jPanel4.add(accueil, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 240, 48));
+
+        abonnement.setBackground(new java.awt.Color(7, 27, 87));
+        abonnement.setFont(new java.awt.Font("Calibri Light", 0, 18)); // NOI18N
+        abonnement.setForeground(new java.awt.Color(7, 27, 87));
+        abonnement.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        abonnement.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fcca/image/baseline_account_circle_black_24dp.png"))); // NOI18N
+        abonnement.setText("Abonnement");
+        abonnement.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        abonnement.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                abonnementMouseClicked(evt);
+            }
+        });
+        jPanel4.add(abonnement, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 140, 240, 48));
+
+        createCompteur.setBackground(new java.awt.Color(7, 27, 87));
+        createCompteur.setFont(new java.awt.Font("Calibri Light", 0, 18)); // NOI18N
+        createCompteur.setForeground(new java.awt.Color(7, 27, 87));
+        createCompteur.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        createCompteur.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fcca/image/baseline_offline_bolt_black_24dp.png"))); // NOI18N
+        createCompteur.setText("Créer un compteur");
+        createCompteur.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        createCompteur.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                createCompteurMouseClicked(evt);
+            }
+        });
+        jPanel4.add(createCompteur, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 190, 240, 48));
+
+        compteur.setBackground(new java.awt.Color(7, 27, 87));
+        compteur.setFont(new java.awt.Font("Calibri Light", 0, 18)); // NOI18N
+        compteur.setForeground(new java.awt.Color(7, 27, 87));
+        compteur.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        compteur.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fcca/image/baseline_storage_black_24dp.png"))); // NOI18N
+        compteur.setText("Afficher les compteurs");
+        compteur.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        compteur.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                compteurMouseClicked(evt);
+            }
+        });
+        jPanel4.add(compteur, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 240, 240, 48));
+
+        listeAbonne.setBackground(new java.awt.Color(7, 27, 87));
+        listeAbonne.setFont(new java.awt.Font("Calibri Light", 0, 18)); // NOI18N
+        listeAbonne.setForeground(new java.awt.Color(7, 27, 87));
+        listeAbonne.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        listeAbonne.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fcca/image/baseline_account_box_black_24dp.png"))); // NOI18N
+        listeAbonne.setText("Abonnés");
+        listeAbonne.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        listeAbonne.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                listeAbonneMouseClicked(evt);
+            }
+        });
+        jPanel4.add(listeAbonne, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 290, 240, 48));
+
+        consommation.setBackground(new java.awt.Color(7, 27, 87));
+        consommation.setFont(new java.awt.Font("Calibri Light", 0, 18)); // NOI18N
+        consommation.setForeground(new java.awt.Color(7, 27, 87));
+        consommation.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        consommation.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fcca/image/baseline_ev_station_black_24dp.png"))); // NOI18N
+        consommation.setText("Consommation");
+        consommation.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        consommation.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                consommationMouseClicked(evt);
+            }
+        });
+        jPanel4.add(consommation, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 340, 240, 48));
+
+        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 240, 490));
+
+        accueilPan.setBackground(new java.awt.Color(7, 27, 87));
+        accueilPan.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel2.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fcca/image/ic_home_white_24dp.png"))); // NOI18N
+        jLabel2.setText("FACTURATION DES CONSOMMATIONS DES COMPTEURS ELECTRIQUES");
+        jLabel2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
+        accueilPan.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, 600, 75));
+
+        consommationPan.setBackground(new java.awt.Color(7, 27, 87));
+        consommationPan.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
+        consommationPan.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        consommationPan.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                consommationPanMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                consommationPanMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                consommationPanMouseExited(evt);
+            }
+        });
+
+        logoCompteur.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        logoCompteur.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fcca/image/baseline_ev_station_white_24dp2.png"))); // NOI18N
+        logoCompteur.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        compteurLab.setFont(new java.awt.Font("Calibri Light", 0, 18)); // NOI18N
+        compteurLab.setForeground(new java.awt.Color(255, 255, 255));
+        compteurLab.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        compteurLab.setText("Consommation");
+        compteurLab.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        javax.swing.GroupLayout consommationPanLayout = new javax.swing.GroupLayout(consommationPan);
+        consommationPan.setLayout(consommationPanLayout);
+        consommationPanLayout.setHorizontalGroup(
+            consommationPanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, consommationPanLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(compteurLab, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(consommationPanLayout.createSequentialGroup()
+                .addGap(38, 38, 38)
+                .addComponent(logoCompteur, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        consommationPanLayout.setVerticalGroup(
+            consommationPanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(consommationPanLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(logoCompteur)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(compteurLab, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        accueilPan.add(consommationPan, new org.netbeans.lib.awtextra.AbsoluteConstraints(224, 302, -1, -1));
+
+        abonnePan.setBackground(new java.awt.Color(7, 27, 87));
+        abonnePan.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
+        abonnePan.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        abonnePan.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                abonnePanMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                abonnePanMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                abonnePanMouseExited(evt);
+            }
+        });
+
+        logoCompteur1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        logoCompteur1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fcca/image/ic_account_circle_white_24dp0.png"))); // NOI18N
+        logoCompteur1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        compteurLab1.setFont(new java.awt.Font("Calibri Light", 0, 18)); // NOI18N
+        compteurLab1.setForeground(new java.awt.Color(255, 255, 255));
+        compteurLab1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        compteurLab1.setText("Espace abonnement");
+        compteurLab1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        javax.swing.GroupLayout abonnePanLayout = new javax.swing.GroupLayout(abonnePan);
+        abonnePan.setLayout(abonnePanLayout);
+        abonnePanLayout.setHorizontalGroup(
+            abonnePanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, abonnePanLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(compteurLab1, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(abonnePanLayout.createSequentialGroup()
+                .addGap(38, 38, 38)
+                .addComponent(logoCompteur1, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        abonnePanLayout.setVerticalGroup(
+            abonnePanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(abonnePanLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(logoCompteur1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(compteurLab1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        accueilPan.add(abonnePan, new org.netbeans.lib.awtextra.AbsoluteConstraints(29, 116, -1, -1));
+
+        facturePan.setBackground(new java.awt.Color(7, 27, 87));
+        facturePan.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
+        facturePan.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        facturePan.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                facturePanMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                facturePanMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                facturePanMouseExited(evt);
+            }
+        });
+
+        logoCompteur2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        logoCompteur2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fcca/image/baseline_euro_symbol_white_24dp.png"))); // NOI18N
+        logoCompteur2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        compteurLab2.setFont(new java.awt.Font("Calibri Light", 0, 18)); // NOI18N
+        compteurLab2.setForeground(new java.awt.Color(255, 255, 255));
+        compteurLab2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        compteurLab2.setText("Facture");
+        compteurLab2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        javax.swing.GroupLayout facturePanLayout = new javax.swing.GroupLayout(facturePan);
+        facturePan.setLayout(facturePanLayout);
+        facturePanLayout.setHorizontalGroup(
+            facturePanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(facturePanLayout.createSequentialGroup()
+                .addComponent(compteurLab2, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(facturePanLayout.createSequentialGroup()
+                .addGap(37, 37, 37)
+                .addComponent(logoCompteur2, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        facturePanLayout.setVerticalGroup(
+            facturePanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(facturePanLayout.createSequentialGroup()
+                .addGap(11, 11, 11)
+                .addComponent(logoCompteur2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(compteurLab2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        accueilPan.add(facturePan, new org.netbeans.lib.awtextra.AbsoluteConstraints(422, 302, -1, -1));
+
+        compteurPan.setBackground(new java.awt.Color(7, 27, 87));
+        compteurPan.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
+        compteurPan.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        compteurPan.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                compteurPanMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                compteurPanMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                compteurPanMouseExited(evt);
+            }
+        });
+
+        logoCompteur3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        logoCompteur3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fcca/image/baseline_offline_bolt_white_24dp.png"))); // NOI18N
+        logoCompteur3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        compteurLab3.setFont(new java.awt.Font("Calibri Light", 0, 18)); // NOI18N
+        compteurLab3.setForeground(new java.awt.Color(255, 255, 255));
+        compteurLab3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        compteurLab3.setText("Créer un compteur");
+        compteurLab3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        javax.swing.GroupLayout compteurPanLayout = new javax.swing.GroupLayout(compteurPan);
+        compteurPan.setLayout(compteurPanLayout);
+        compteurPanLayout.setHorizontalGroup(
+            compteurPanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, compteurPanLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(compteurLab3, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(compteurPanLayout.createSequentialGroup()
+                .addGap(39, 39, 39)
+                .addComponent(logoCompteur3, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        compteurPanLayout.setVerticalGroup(
+            compteurPanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(compteurPanLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(logoCompteur3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(compteurLab3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        accueilPan.add(compteurPan, new org.netbeans.lib.awtextra.AbsoluteConstraints(224, 116, -1, -1));
+
+        listeAbonnePan.setBackground(new java.awt.Color(7, 27, 87));
+        listeAbonnePan.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
+        listeAbonnePan.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        listeAbonnePan.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                listeAbonnePanMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                listeAbonnePanMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                listeAbonnePanMouseExited(evt);
+            }
+        });
+
+        logoCompteur7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        logoCompteur7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fcca/image/baseline_account_box_white_24dp.png"))); // NOI18N
+        logoCompteur7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        compteurLab7.setFont(new java.awt.Font("Calibri Light", 0, 18)); // NOI18N
+        compteurLab7.setForeground(new java.awt.Color(255, 255, 255));
+        compteurLab7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        compteurLab7.setText("Lister les abonnés");
+        compteurLab7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        javax.swing.GroupLayout listeAbonnePanLayout = new javax.swing.GroupLayout(listeAbonnePan);
+        listeAbonnePan.setLayout(listeAbonnePanLayout);
+        listeAbonnePanLayout.setHorizontalGroup(
+            listeAbonnePanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, listeAbonnePanLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(compteurLab7, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(listeAbonnePanLayout.createSequentialGroup()
+                .addGap(36, 36, 36)
+                .addComponent(logoCompteur7, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        listeAbonnePanLayout.setVerticalGroup(
+            listeAbonnePanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(listeAbonnePanLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(logoCompteur7)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(compteurLab7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        accueilPan.add(listeAbonnePan, new org.netbeans.lib.awtextra.AbsoluteConstraints(29, 302, -1, -1));
+
+        afficheCompteurPan.setBackground(new java.awt.Color(7, 27, 87));
+        afficheCompteurPan.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
+        afficheCompteurPan.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        afficheCompteurPan.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                afficheCompteurPanMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                afficheCompteurPanMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                afficheCompteurPanMouseExited(evt);
+            }
+        });
+
+        logoCompteur8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        logoCompteur8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fcca/image/baseline_storage_white_24dp.png"))); // NOI18N
+        logoCompteur8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        compteurLab8.setFont(new java.awt.Font("Calibri Light", 0, 18)); // NOI18N
+        compteurLab8.setForeground(new java.awt.Color(255, 255, 255));
+        compteurLab8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        compteurLab8.setText("afficher les compteurs");
+        compteurLab8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        javax.swing.GroupLayout afficheCompteurPanLayout = new javax.swing.GroupLayout(afficheCompteurPan);
+        afficheCompteurPan.setLayout(afficheCompteurPanLayout);
+        afficheCompteurPanLayout.setHorizontalGroup(
+            afficheCompteurPanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, afficheCompteurPanLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(compteurLab8, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(afficheCompteurPanLayout.createSequentialGroup()
+                .addGap(58, 58, 58)
+                .addComponent(logoCompteur8)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        afficheCompteurPanLayout.setVerticalGroup(
+            afficheCompteurPanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(afficheCompteurPanLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(logoCompteur8)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(compteurLab8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        accueilPan.add(afficheCompteurPan, new org.netbeans.lib.awtextra.AbsoluteConstraints(422, 116, -1, -1));
+
+        accueilLab.setFont(new java.awt.Font("Calibri Light", 0, 18)); // NOI18N
+        accueilLab.setForeground(new java.awt.Color(255, 255, 255));
+        accueilLab.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        accueilLab.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fcca/image/image002.png"))); // NOI18N
+        accueilPan.add(accueilLab, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, 540, 110));
+
+        indication.setBackground(new java.awt.Color(0, 0, 0));
+        indication.setFont(new java.awt.Font("Calibri Light", 0, 18)); // NOI18N
+        indication.setForeground(new java.awt.Color(255, 255, 255));
+        indication.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        indication.setText("Vous pouvez naviguer sur l'application à travers la barre Menu à gauche");
+        indication.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 1, true));
+        accueilPan.add(indication, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 250, 520, 50));
+
+        copyright.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
+        copyright.setForeground(new java.awt.Color(153, 153, 153));
+        copyright.setText("Copyright (C) 2018 by Cheikh");
+        accueilPan.add(copyright, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 470, -1, -1));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fcca/image/baseline_copyright_white_18dp.png"))); // NOI18N
+        accueilPan.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 470, -1, -1));
+
+        getContentPane().add(accueilPan, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 40, 620, 490));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+    private void settingVisible(JPanel jp1,JPanel jp2,JPanel jp3,JPanel jp4,JPanel jp5,JPanel jp6,
+            Boolean bool1,Boolean bool2, Boolean bool3,Boolean bool4,Boolean bool5, Boolean bool6){
+        jp1.setVisible(bool1);
+        jp2.setVisible(bool2);
+        jp3.setVisible(bool3);
+        jp4.setVisible(bool4);
+        jp5.setVisible(bool5);
+        jp6.setVisible(bool6);
+    }
+    private void exitLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitLabelMouseClicked
+        // TODO add your handling code here:
+        CloseFrame.close(exitLabel,this);
+    }//GEN-LAST:event_exitLabelMouseClicked
+
+    private void backLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backLabelMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_backLabelMouseClicked
+
+    private void jPanel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel2MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPanel2MouseClicked
+
+    private void jPanel2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel2MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPanel2MouseEntered
+
+    private void jPanel2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel2MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPanel2MouseExited
+
+    private void abonnementMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_abonnementMouseClicked
+        // TODO add your handling code here:
+        settingVisible(abonnePan, compteurPan, afficheCompteurPan,listeAbonnePan, consommationPan, facturePan,
+                true,false, false,false, false,false);
+        accueilLab.setVisible(false);
+        indication.setVisible(false);
+    }//GEN-LAST:event_abonnementMouseClicked
+
+    private void factureMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_factureMouseClicked
+        // TODO add your handling code here:
+        settingVisible(facturePan,abonnePan, compteurPan, afficheCompteurPan,listeAbonnePan, consommationPan, 
+                true,false, false,false, false,false);
+        accueilLab.setVisible(false);
+        indication.setVisible(false);
+    }//GEN-LAST:event_factureMouseClicked
+
+    private void createCompteurMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_createCompteurMouseClicked
+        // TODO add your handling code here:
+        settingVisible(compteurPan,abonnePan,afficheCompteurPan,listeAbonnePan, consommationPan, facturePan,
+                true, false, false,false, false,false);
+        accueilLab.setVisible(false);
+        indication.setVisible(false);
+    }//GEN-LAST:event_createCompteurMouseClicked
+
+    private void accueilMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_accueilMouseClicked
+        // TODO add your handling code here:
+         settingVisible(abonnePan, compteurPan, afficheCompteurPan,listeAbonnePan, consommationPan, facturePan,
+                false,false, false,false, false,false);
+         accueilLab.setVisible(true);
+         indication.setVisible(true);
+    }//GEN-LAST:event_accueilMouseClicked
+
+    private void consommationPanMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_consommationPanMouseClicked
+        // TODO add your handling code here:
+        this.setVisible(false);
+        new ConsommationRegister().setVisible(true);
+    }//GEN-LAST:event_consommationPanMouseClicked
+
+    private void abonnePanMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_abonnePanMouseClicked
+        // TODO add your handling code here:
+        this.setVisible(false);
+        new AcceptLicence().setVisible(true);
+    }//GEN-LAST:event_abonnePanMouseClicked
+
+    private void facturePanMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_facturePanMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_facturePanMouseClicked
+
+    private void compteurPanMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_compteurPanMouseClicked
+        // TODO add your handling code here:
+        this.setVisible(false);
+        new CompterRegister().setVisible(true);
+    }//GEN-LAST:event_compteurPanMouseClicked
+
+    private void listeAbonnePanMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listeAbonnePanMouseClicked
+        // TODO add your handling code here:
+        this.setVisible(false);
+        new ListeAbonne().setVisible(true);
+    }//GEN-LAST:event_listeAbonnePanMouseClicked
+
+    private void afficheCompteurPanMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_afficheCompteurPanMouseClicked
+        // TODO add your handling code here:
+        this.setVisible(false);
+        new CompteurAffectés().setVisible(true);
+    }//GEN-LAST:event_afficheCompteurPanMouseClicked
+
+    private void compteurMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_compteurMouseClicked
+        // TODO add your handling code here:
+         settingVisible(afficheCompteurPan,abonnePan, compteurPan, listeAbonnePan, consommationPan, facturePan,
+                true,false, false,false, false,false);
+         accueilLab.setVisible(false);
+         indication.setVisible(false);
+    }//GEN-LAST:event_compteurMouseClicked
+
+    private void listeAbonneMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listeAbonneMouseClicked
+        // TODO add your handling code here:
+        settingVisible(listeAbonnePan,afficheCompteurPan,abonnePan, compteurPan,consommationPan, facturePan,
+                true,false, false,false, false,false);
+        accueilLab.setVisible(false);
+        indication.setVisible(false);
+    }//GEN-LAST:event_listeAbonneMouseClicked
+
+    private void consommationMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_consommationMouseClicked
+        // TODO add your handling code here:
+        settingVisible(consommationPan,listeAbonnePan,afficheCompteurPan,abonnePan, compteurPan,facturePan,
+                true,false, false,false, false,false);
+        accueilLab.setVisible(false);
+        indication.setVisible(false);
+    }//GEN-LAST:event_consommationMouseClicked
+
+    private void abonnePanMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_abonnePanMouseEntered
+        // TODO add your handling code here:
+        abonnePan.setBackground(new java.awt.Color(0,0,0));
+    }//GEN-LAST:event_abonnePanMouseEntered
+
+    private void compteurPanMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_compteurPanMouseEntered
+        // TODO add your handling code here:
+        compteurPan.setBackground(new java.awt.Color(0,0,0));
+    }//GEN-LAST:event_compteurPanMouseEntered
+
+    private void afficheCompteurPanMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_afficheCompteurPanMouseEntered
+        // TODO add your handling code here:
+        afficheCompteurPan.setBackground(new java.awt.Color(0,0,0));
+    }//GEN-LAST:event_afficheCompteurPanMouseEntered
+
+    private void listeAbonnePanMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listeAbonnePanMouseEntered
+        // TODO add your handling code here:
+        listeAbonnePan.setBackground(new java.awt.Color(0,0,0));
+    }//GEN-LAST:event_listeAbonnePanMouseEntered
+
+    private void consommationPanMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_consommationPanMouseEntered
+        // TODO add your handling code here:
+        consommationPan.setBackground(new java.awt.Color(0,0,0));
+    }//GEN-LAST:event_consommationPanMouseEntered
+
+    private void facturePanMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_facturePanMouseEntered
+        // TODO add your handling code here:
+        facturePan.setBackground(new java.awt.Color(0,0,0));
+    }//GEN-LAST:event_facturePanMouseEntered
+
+    private void abonnePanMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_abonnePanMouseExited
+        // TODO add your handling code here:   
+        abonnePan.setBackground(new java.awt.Color(7,27,87));
+    }//GEN-LAST:event_abonnePanMouseExited
+
+    private void compteurPanMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_compteurPanMouseExited
+        // TODO add your handling code here:
+        compteurPan.setBackground(new java.awt.Color(7,27,87));
+    }//GEN-LAST:event_compteurPanMouseExited
+
+    private void afficheCompteurPanMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_afficheCompteurPanMouseExited
+        // TODO add your handling code here:
+        afficheCompteurPan.setBackground(new java.awt.Color(7,27,87));
+    }//GEN-LAST:event_afficheCompteurPanMouseExited
+
+    private void listeAbonnePanMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listeAbonnePanMouseExited
+        // TODO add your handling code here:
+        listeAbonnePan.setBackground(new java.awt.Color(7,27,87));
+    }//GEN-LAST:event_listeAbonnePanMouseExited
+
+    private void consommationPanMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_consommationPanMouseExited
+        // TODO add your handling code here:
+        consommationPan.setBackground(new java.awt.Color(7,27,87));
+    }//GEN-LAST:event_consommationPanMouseExited
+
+    private void facturePanMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_facturePanMouseExited
+        // TODO add your handling code here:
+        facturePan.setBackground(new java.awt.Color(7,27,87));
+    }//GEN-LAST:event_facturePanMouseExited
+
+    private void accueilMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_accueilMousePressed
+        // TODO add your handling code here:
+        accueil.setForeground(new java.awt.Color(153,153,153));
+    }//GEN-LAST:event_accueilMousePressed
 
     /**
      * @param args the command line arguments
@@ -83,7 +788,43 @@ public class Dashboard extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel abonnePan;
+    private javax.swing.JLabel abonnement;
+    private javax.swing.JLabel accueil;
+    private javax.swing.JLabel accueilLab;
+    private javax.swing.JPanel accueilPan;
+    private javax.swing.JPanel afficheCompteurPan;
+    private javax.swing.JLabel backLabel;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
+    private javax.swing.JLabel compteur;
+    private javax.swing.JLabel compteurLab;
+    private javax.swing.JLabel compteurLab1;
+    private javax.swing.JLabel compteurLab2;
+    private javax.swing.JLabel compteurLab3;
+    private javax.swing.JLabel compteurLab7;
+    private javax.swing.JLabel compteurLab8;
+    private javax.swing.JPanel compteurPan;
+    private javax.swing.JLabel consommation;
+    private javax.swing.JPanel consommationPan;
+    private javax.swing.JLabel copyright;
+    private javax.swing.JLabel createCompteur;
+    private javax.swing.JLabel exitLabel;
+    private javax.swing.JLabel facture;
+    private javax.swing.JPanel facturePan;
+    private javax.swing.JLabel indication;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JLabel listeAbonne;
+    private javax.swing.JPanel listeAbonnePan;
+    private javax.swing.JLabel logoCompteur;
+    private javax.swing.JLabel logoCompteur1;
+    private javax.swing.JLabel logoCompteur2;
+    private javax.swing.JLabel logoCompteur3;
+    private javax.swing.JLabel logoCompteur7;
+    private javax.swing.JLabel logoCompteur8;
     // End of variables declaration//GEN-END:variables
 }

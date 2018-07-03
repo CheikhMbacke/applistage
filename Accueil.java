@@ -7,6 +7,7 @@ package fcca;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -19,6 +20,7 @@ public class Accueil extends javax.swing.JFrame {
      */
     public Accueil() {
         initComponents();
+        //this.setIconImage(new ImageIcon(getClass().getResource("image/image002.png")).getImage());
     }
 
     /**

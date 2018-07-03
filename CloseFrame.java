@@ -17,10 +17,10 @@ import javax.swing.JOptionPane;
  */
 public class CloseFrame {
     
-     public static void close(JLabel label){
+     public static void close(JLabel label,JFrame frame){
          label.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0,0,0)));
         if(JOptionPane.showConfirmDialog(null,"Voulez-vous fermer la fenêtre ?", "Fermer", JOptionPane.YES_NO_OPTION)==0){
-            System.exit(0);
+            frame.setVisible(false);
         }
     }
     

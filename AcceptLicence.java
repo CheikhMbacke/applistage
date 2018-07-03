@@ -5,6 +5,8 @@
  */
 package fcca;
 
+import java.awt.Color;
+
 /**
  *
  * @author Cheikh Mbacké
@@ -34,9 +36,10 @@ public class AcceptLicence extends javax.swing.JFrame {
         jCheckBox1 = new javax.swing.JCheckBox();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        msg = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        exitLabel1 = new javax.swing.JLabel();
+        backLabel = new javax.swing.JLabel();
         exitLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -47,8 +50,10 @@ public class AcceptLicence extends javax.swing.JFrame {
 
         jScrollPane2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
 
+        jEditorPane1.setEditable(false);
+        jEditorPane1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153), 2), "Licence d'abonnement", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Calibri Light", 1, 16))); // NOI18N
         jEditorPane1.setFont(new java.awt.Font("Calibri Light", 0, 16)); // NOI18N
-        jEditorPane1.setText("Toute personne physique ou morale désirant souscrire un Abonnement dépose au niveau de Senelec\n une Demande d’Abonnement avec toutes les pièces requises et fournit tous les renseignements \nnécessaires prévus à l’Annexe V. Dans le cas où les installations intérieures ne sont pas conformes \naux normes établies par la réglementation en vigueur,Senelec \nse reserve le droit de refuser l’Abonnement. \n\n>Article 3 Lorsque l’électricité est destinée à un usage domestique, une seule alimentation \n(un seul compteur) est fournie pour chaque logement.\n\n>Article 4 Lorsque l’électricité est destinée à un usage professionnel, une seule alimentation est\n fournie \npour une même personne physique ou morale exerçant sur\nun même titre d’occupation la même activité.\n\n>Article 5 La Demande d'Abonnement est acceptée conformément aux dispositions prévues aux\n « Conditions Générales D'abonnement pour la Fourniture d’électricité » en Annexe V\n\n>Article 6 Le Demandeur paie les Frais de Dossier d’Abonnement tels que définis en Annexe I \n« Coûts et Financements des Prestations » du présent Règlement. Senelec procède à la visite des \ninstallations du Demandeur dans les délais fixés par les Normes et Obligations en vigueur.A défaut,\n Senelec paie au client les incitations contractuelles prévues à cet effet\n\n>Article 7 Le Demandeur est invité à s’acquitter des Frais d’Abonnement lorsque son installation \nest conforme pour accueillir les Appareils de mesure. Les Demandes d’Abonnement non finalisées\n du fait du Demandeur sont annulées après une période de six (6) mois à compter de la date\n d’introduction de la demande ou de la date à laquelle\nle paiement des frais d’abonnement était exigible.\n\n>Article 8 Les Frais de Dossier d’Abonnement exigibles au dépôt de la\nDemande d'Abonnement ne sont pas remboursables lorsque\nla Demande d’Abonnement est annulée du fait du\nDemandeur. Le Client qui entend renouveler la procédure\nd’Abonnement introduit une demande dans les co nditions\nfixées par les articles ci-dessus.\nL’Abonnement est conclu dès le consentement donné par\nSenelec au Demandeur et le paiement par ce dernier de s\nFrais d’Abonnement tels que définis en Annexe I « Coûts et\nFinancements des Prestations » du présent Règlement.\nLe contrat d’Abonnement est signé par le Client ou son\nreprésentant dûment mandaté et le représentant de Senelec .\n\n>Article 9 Après la conclusion d’un Abonnement, Senelec procède à la\npose des Appareils de mesure chez le Client dans les délais\nfixés par les Normes et obligations en vigueur.");
+        jEditorPane1.setText("-> Article 1: Toute fourniture d'énergie électrique par Senelec est subordonnée à la conclusion \nd'un Abonnement entre le Client et Senelec.L’abonnement est conclu soit en Post-Paiement soit \nen Prépaiement  suivant la  Puissance  Souscrite  par  le  Client. \n\n-> Article 2: Toute personne physique ou morale désirant souscrire un Abonnement  dépose au\nniveau de Senelec une Demande d’Abonnement avec toutes les pièces requises et fournit tous\nles renseignements nécessaires prévus à l’Annexe V. Dans  le cas où les  installations  intérieures\nne  sont  pas  conformes aux  normes établies  par  la  réglementation en  vigueur,\nSenelec se  reserve  le  droit de refuser l’Abonnement.\n\n-> Article 3: Lorsque l’électricité est destinée à un usage domestique, une seule alimentation \n(un seul compteur)  est fournie pour chaque logement.  \n\n-> Article 4: Lorsque l’électricité est destinée à un usage professionnel, une seule alimentation \nest fournie  pour une même personne physique ou morale exerçant sur un même titre \nd’occupation la même activité.\n    \n->Article 5: La Demande d'Abonnement est acceptée conformément aux  dispositions  prévues \naux « Conditions Générales D'abonnement pour la Fourniture d’électricité» en Annexe V. \n\n->Article 6: Le Demandeur  paie les Frais de Dossier d’Abonnement tels que définis en Annexe I \n« Coûts et Financements des Prestations » du présent Règlement. Senelec procède à la visite\n des installations du Demandeur dans les délais fixés par les Normes et Obligations en vigueur.\nA défaut, Senelec paie au client les incitations contractuelles prévues à cet effet.   \n \n->Article 7: Le Demandeur est invité à s’acquitter des Frais d’Abonnement lorsque son installation \nest conforme pour accueillir les Appareils de mesure. Les Demandes d’Abonnement non finalisées \ndu fait du Demandeur sont annulées après une période de six (6) mois à compter de la date \nd’introduction de la demande  ou de la date à laquelle le paiement des frais d’abonnement  était exigible. \n\n->Article 8: Les Frais de Dossier d’Abonnement exigibles au dépôt de la Demande d'Abonnement\nne sont pas remboursables lorsque la Demande d’Abonnement est annulée du fait du Demandeur. \nLe Client qui  entend  renouveler la procédure  d’Abonnement  introduit  une demande  dans les \nconditions fixées par les articles  ci-dessus. L’Abonnement est conclu dès le consentement donné \npar Senelec au Demandeur et le paiement par ce dernier des Frais d’Abonnement tels que définis \nen Annexe I « Coûts et Financements des Prestations » du présent Règlement.  Le  contrat d’Abonnement \nest signé par le Client ou son représentant dûment mandaté et le représentant de Senelec. \n\n->Article 9: Après la conclusion d’un Abonnement, Senelec procède à la pose des Appareils de mesure \nchez le Client dans les délais fixés par les Normes  et obligations  en vigueur. ");
         jScrollPane2.setViewportView(jEditorPane1);
 
         jCheckBox1.setBackground(new java.awt.Color(0, 153, 51));
@@ -73,42 +78,58 @@ public class AcceptLicence extends javax.swing.JFrame {
         jButton2.setForeground(new java.awt.Color(7, 27, 87));
         jButton2.setText("Suivant");
         jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton2MouseClicked(evt);
+            }
+        });
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
 
+        msg.setBackground(new java.awt.Color(255, 255, 255));
+        msg.setFont(new java.awt.Font("Calibri Light", 1, 14)); // NOI18N
+        msg.setForeground(new java.awt.Color(204, 0, 0));
+        msg.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(78, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(177, 177, 177)
                         .addComponent(jCheckBox1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(18, 18, 18)
+                        .addComponent(msg, javax.swing.GroupLayout.PREFERRED_SIZE, 309, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(19, 19, 19)
                         .addComponent(jButton1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                        .addGap(96, 96, 96)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 678, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(99, Short.MAX_VALUE))
+                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 719, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(76, 76, 76))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 497, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jCheckBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jCheckBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(msg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -118,14 +139,14 @@ public class AcceptLicence extends javax.swing.JFrame {
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fcca/image/logo.PNG"))); // NOI18N
 
-        exitLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        exitLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        exitLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        exitLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fcca/image/baseline_arrow_back_black_24dp.png"))); // NOI18N
-        exitLabel1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        exitLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+        backLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        backLabel.setForeground(new java.awt.Color(255, 255, 255));
+        backLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        backLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fcca/image/baseline_arrow_back_black_24dp.png"))); // NOI18N
+        backLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        backLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                exitLabel1MouseClicked(evt);
+                backLabelMouseClicked(evt);
             }
         });
 
@@ -147,7 +168,7 @@ public class AcceptLicence extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(exitLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(backLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(exitLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -155,7 +176,7 @@ public class AcceptLicence extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addComponent(exitLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(exitLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(backLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         getContentPane().add(jPanel2, java.awt.BorderLayout.PAGE_START);
@@ -167,24 +188,37 @@ public class AcceptLicence extends javax.swing.JFrame {
         // TODO add your handling code here:
         if(jCheckBox1.isSelected()){
             jButton2.setEnabled(true);
-        }else
-        jButton2.setEnabled(false);
+        }else{
+            jButton2.setEnabled(false);
+        }
     }//GEN-LAST:event_jCheckBox1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-         this.setVisible(false);
-        new AbonneRegister().setVisible(true);
+        
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void exitLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitLabel1MouseClicked
+    private void backLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backLabelMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_exitLabel1MouseClicked
+        this.setVisible(false);
+        new Dashboard().setVisible(true);
+    }//GEN-LAST:event_backLabelMouseClicked
 
     private void exitLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitLabelMouseClicked
         // TODO add your handling code here:
-        CloseFrame.close(exitLabel);
+        CloseFrame.close(exitLabel,this);
     }//GEN-LAST:event_exitLabelMouseClicked
+
+    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+        // TODO add your handling code here:
+        if(jCheckBox1.isSelected()){
+            this.setVisible(false);
+            new AbonneRegister().setVisible(true);
+        }else{
+            msg.setText("Veuiller accepter la licence");
+            msg.setForeground(Color.red);
+        }
+    }//GEN-LAST:event_jButton2MouseClicked
 
     /**
      * @param args the command line arguments
@@ -222,8 +256,8 @@ public class AcceptLicence extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel backLabel;
     private javax.swing.JLabel exitLabel;
-    private javax.swing.JLabel exitLabel1;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JCheckBox jCheckBox1;
@@ -232,5 +266,6 @@ public class AcceptLicence extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JLabel msg;
     // End of variables declaration//GEN-END:variables
 }

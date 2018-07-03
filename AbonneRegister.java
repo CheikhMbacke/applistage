@@ -58,7 +58,7 @@ public class AbonneRegister extends javax.swing.JFrame {
         addr = new javax.swing.JTextField();
         prenom = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
-        exitLabel1 = new javax.swing.JLabel();
+        backLabel = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jComboBox = new javax.swing.JComboBox<>();
         jButton2 = new javax.swing.JButton();
@@ -86,7 +86,7 @@ public class AbonneRegister extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fcca/image/ic_home_white_24dp.png"))); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fcca/image/baseline_location_on_white_24dp.png"))); // NOI18N
         jLabel4.setText("Adresse");
         jLabel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
 
@@ -108,9 +108,11 @@ public class AbonneRegister extends javax.swing.JFrame {
 
         jButton1.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
         jButton1.setForeground(new java.awt.Color(0, 0, 51));
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fcca/image/baseline_card_membership_black_24dp.png"))); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fcca/image/baseline_send_black_24dp.png"))); // NOI18N
         jButton1.setText("s'abonner");
         jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton1.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -172,21 +174,21 @@ public class AbonneRegister extends javax.swing.JFrame {
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fcca/image/téléchargement.png"))); // NOI18N
 
-        exitLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        exitLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        exitLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        exitLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fcca/image/baseline_arrow_back_white_24dp.png"))); // NOI18N
-        exitLabel1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        exitLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+        backLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        backLabel.setForeground(new java.awt.Color(255, 255, 255));
+        backLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        backLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fcca/image/baseline_arrow_back_white_24dp.png"))); // NOI18N
+        backLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        backLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                exitLabel1MouseClicked(evt);
+                backLabelMouseClicked(evt);
             }
         });
 
         jLabel8.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fcca/image/baseline_ev_station_white_24dp.png"))); // NOI18N
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fcca/image/baseline_offline_bolt_white_24dp2.png"))); // NOI18N
         jLabel8.setText("N°Compteur");
         jLabel8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
 
@@ -243,14 +245,14 @@ public class AbonneRegister extends javax.swing.JFrame {
                                 .addComponent(jButton2)
                                 .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(0, 163, Short.MAX_VALUE)
-                                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(114, 114, 114)
-                                .addComponent(exitLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(jLabel7)
+                                .addGap(90, 90, 90)
+                                .addComponent(backLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(exitLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 284, Short.MAX_VALUE)
                         .addComponent(jButton1)
                         .addGap(231, 231, 231))))
         );
@@ -259,11 +261,11 @@ public class AbonneRegister extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(exitLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(backLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(exitLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(30, 30, 30)
+                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(48, 48, 48)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(nom2, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -285,10 +287,9 @@ public class AbonneRegister extends javax.swing.JFrame {
                     .addComponent(tel))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE)
-                        .addComponent(jComboBox)))
+                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jComboBox))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(msg, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -314,7 +315,7 @@ public class AbonneRegister extends javax.swing.JFrame {
         WindowEvent winClose= new WindowEvent(this,WindowEvent.WINDOW_CLOSING);
         Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(winClose);
     }*/
-    public void errorMessage(String message,JLabel label){
+    private void errorMessage(String message,JLabel label){
             label.setText(message);
             label.setForeground(Color.red);
     }
@@ -330,22 +331,30 @@ public class AbonneRegister extends javax.swing.JFrame {
             if(identite.length() == 13){
                 if(numTel.length()==9){
                     String numCpt=jComboBox.getSelectedItem().toString();
-             Connection conn;
-             msg.setText("");
+                Connection conn;
+                msg.setText("");
                 try {
                     conn = ConnectBD.BD();
-                    //Abonnement
+                    //Verifier si le numéro de compteur est deja pris ou pas
                     Statement s=conn.createStatement();
-                    ResultSet rs=s.executeQuery("SELECT numCompteur FROM abonne");
-                    Boolean existe = false;
+                    ResultSet rs=s.executeQuery("SELECT numCompteur,cin FROM abonne");
+                    Boolean CptExiste = false;
+                    Boolean CptCin = false;
                     while(rs.next()){
                         if(rs.getString("numCompteur").equals(numCpt))
                         {
-                            existe=true;
+                            CptExiste=true;
                             break;
                         }
                     }
-                    if(existe){
+                    while(rs.next()){
+                        if(rs.getString("cin").equals(identite))
+                        {
+                            CptCin=true;
+                            break;
+                        }
+                    }
+                    if(CptExiste){
                         errorMessage("le numéro de compteur est déja pris",msg);
                         Statement statement=conn.createStatement();
                         ResultSet rst=statement.executeQuery("SELECT idAbonne FROM compteur where idAbonne=0");
@@ -354,13 +363,16 @@ public class AbonneRegister extends javax.swing.JFrame {
                                     "Nouveau Compteur",JOptionPane.YES_NO_OPTION);
                             if(valReturn==0)
                               new CompterRegister().setVisible(true);
-                        }
+                        }else if(CptCin){
+                            errorMessage("le numéro cin est déja pris",msg);
+                    }
                     }else{
+                        //Enregistrement de l'abonné
                         PreparedStatement ps=conn.prepareStatement("INSERT INTO abonne (nom,prenom,adresse,cin,tel,numCompteur)"
                             +" VALUES (?,?,?,?,?,?)");
-                        ps.setString(1, name);
-                        ps.setString(2, surname);
-                        ps.setString(3, adresse);
+                        ps.setString(1, name.toLowerCase());
+                        ps.setString(2, surname.toLowerCase());
+                        ps.setString(3, adresse.toLowerCase());
                         ps.setString(4, identite);
                         ps.setString(5, numTel);
                         ps.setString(6, numCpt);
@@ -379,8 +391,7 @@ public class AbonneRegister extends javax.swing.JFrame {
                         states.executeUpdate();
                         conn.close();
                         //message
-                        JOptionPane.showConfirmDialog(null, "Abonnement réussie",
-                                    "Abonnement",JOptionPane.YES_OPTION);
+                        JOptionPane.showMessageDialog(null, "Abonnement réussie");
                         msg.setText("Enregistrement réussie");
                         msg.setForeground(Color.green);
                         nom2.setText("");
@@ -409,7 +420,7 @@ public class AbonneRegister extends javax.swing.JFrame {
     @SuppressWarnings("empty-statement")
     private void exitLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitLabelMouseClicked
         // TODO add your handling code here:
-               CloseFrame.close(exitLabel);
+               CloseFrame.close(exitLabel,this);
     }//GEN-LAST:event_exitLabelMouseClicked
 
     private void nom2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nom2ActionPerformed
@@ -420,9 +431,11 @@ public class AbonneRegister extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_prenomActionPerformed
 
-    private void exitLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitLabel1MouseClicked
+    private void backLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backLabelMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_exitLabel1MouseClicked
+        this.setVisible(false);
+        new Dashboard().setVisible(true);
+    }//GEN-LAST:event_backLabelMouseClicked
 
     private void jComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxActionPerformed
         // TODO add your handling code here:
@@ -494,9 +507,9 @@ public class AbonneRegister extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField addr;
+    private javax.swing.JLabel backLabel;
     private javax.swing.JTextField cin;
     private javax.swing.JLabel exitLabel;
-    private javax.swing.JLabel exitLabel1;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JComboBox<String> jComboBox;
