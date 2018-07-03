@@ -193,6 +193,7 @@ public class AbonneRegister extends javax.swing.JFrame {
         jLabel8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
 
         jComboBox.setFont(new java.awt.Font("Calibri Light", 0, 16)); // NOI18N
+        jComboBox.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jComboBox.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jComboBoxMouseClicked(evt);
