@@ -7,6 +7,7 @@ package fcca;
 
 import java.awt.Color;
 import java.awt.Toolkit;
+import java.awt.event.KeyEvent;
 import java.awt.event.WindowEvent;
 import java.sql.Connection;
 import java.sql.Date;
@@ -49,13 +50,10 @@ public class ConsommationRegister extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         exitLabel = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
         backLabel = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jComboBox = new javax.swing.JComboBox<>();
-        jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -63,6 +61,7 @@ public class ConsommationRegister extends javax.swing.JFrame {
         debut = new javax.swing.JTextField();
         fin = new javax.swing.JTextField();
         ai = new javax.swing.JTextField();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setUndecorated(true);
@@ -92,7 +91,7 @@ public class ConsommationRegister extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 470, -1, 36));
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 450, -1, 36));
 
         msg.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
         msg.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -132,10 +131,6 @@ public class ConsommationRegister extends javax.swing.JFrame {
         });
         jPanel1.add(exitLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(848, 0, 42, 35));
 
-        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fcca/image/baseline_ev_station_white_24dp2.png"))); // NOI18N
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(506, 77, -1, -1));
-
         backLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         backLabel.setForeground(new java.awt.Color(255, 255, 255));
         backLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -161,6 +156,9 @@ public class ConsommationRegister extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jComboBoxMouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jComboBoxMouseEntered(evt);
+            }
         });
         jComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -169,17 +167,9 @@ public class ConsommationRegister extends javax.swing.JFrame {
         });
         jPanel1.add(jComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 170, 289, 37));
 
-        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fcca/image/baseline_ev_station_white_24dp2.png"))); // NOI18N
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(564, 105, -1, -1));
-
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fcca/image/baseline_ev_station_white_24dp2.png"))); // NOI18N
-        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(564, 51, -1, -1));
-
-        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fcca/image/baseline_ev_station_white_24dp2.png"))); // NOI18N
-        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 75, -1, -1));
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fcca/image/compteur-electrique04.gif"))); // NOI18N
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 10, 260, 150));
 
         jLabel12.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
@@ -206,6 +196,11 @@ public class ConsommationRegister extends javax.swing.JFrame {
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 320, 150, 35));
 
         ni.setFont(new java.awt.Font("Calibri Light", 0, 16)); // NOI18N
+        ni.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                niKeyTyped(evt);
+            }
+        });
         jPanel1.add(ni, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 370, 290, 40));
 
         debut.setFont(new java.awt.Font("Calibri Light", 0, 16)); // NOI18N
@@ -215,7 +210,27 @@ public class ConsommationRegister extends javax.swing.JFrame {
         jPanel1.add(fin, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 270, 290, 40));
 
         ai.setFont(new java.awt.Font("Calibri Light", 0, 16)); // NOI18N
+        ai.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                aiKeyTyped(evt);
+            }
+        });
         jPanel1.add(ai, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 320, 290, 40));
+
+        jButton2.setBackground(new java.awt.Color(7, 27, 87));
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fcca/image/baseline_cloud_download_black_24dp.png"))); // NOI18N
+        jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton2MouseClicked(evt);
+            }
+        });
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 170, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -284,13 +299,9 @@ public class ConsommationRegister extends javax.swing.JFrame {
                          } catch (Exception e) {
                              JOptionPane.showMessageDialog(null, "La date doit être sous format aaaa-mm-jj");
                          }
-                         //Verification du format des index entrés
-                         try {
-                             ps.setInt(3, Integer.parseInt(AI));
-                             ps.setInt(4, Integer.parseInt(NI));
-                         } catch (Exception e) {
-                             JOptionPane.showMessageDialog(null, "l'index doit être sous format numérique");
-                         }
+                        
+                        ps.setInt(3, Integer.parseInt(AI));
+                        ps.setInt(4, Integer.parseInt(NI));
                         ps.setInt(5, idCpt);
                         ps.executeUpdate();
                         conn.close();
@@ -311,7 +322,16 @@ public class ConsommationRegister extends javax.swing.JFrame {
                  
              
     }//GEN-LAST:event_jButton1ActionPerformed
-
+    public void isANumber(KeyEvent events,JLabel label){
+          label.setText("");
+        char c=events.getKeyChar();
+        if(!(Character.isDigit(c) || (c==KeyEvent.VK_BACK_SPACE) || c==KeyEvent.VK_DELETE)){
+            getToolkit().beep();
+            events.consume();
+            label.setText("Veuiller entrer des chiffres");
+            label.setForeground(Color.red);
+        }
+    }
     @SuppressWarnings("empty-statement")
     private void exitLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitLabelMouseClicked
         // TODO add your handling code here:
@@ -333,7 +353,49 @@ public class ConsommationRegister extends javax.swing.JFrame {
 
     private void jComboBoxMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jComboBoxMouseClicked
         // TODO add your handling code here:
-     Connection conn;
+    }//GEN-LAST:event_jComboBoxMouseClicked
+
+    private void aiKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_aiKeyTyped
+        // TODO add your handling code here:
+        isANumber(evt, msg);
+    }//GEN-LAST:event_aiKeyTyped
+
+    private void niKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_niKeyTyped
+        // TODO add your handling code here:
+        isANumber(evt, msg);
+    }//GEN-LAST:event_niKeyTyped
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        jComboBox.removeAllItems();
+        Connection conn;
+        try {
+            //Recuperation de tous les numéros de compteurs
+            conn = ConnectBD.BD();
+            Statement st=conn.createStatement();
+            String sqlQuery="SELECT numCompteur,idAbonne FROM compteur WHERE idAbonne=0";
+            ResultSet rs=st.executeQuery(sqlQuery);
+
+            while(rs.next()){
+                jComboBox.addItem(rs.getString("numCompteur"));
+            }
+            if(!rs.first())
+                new CompterRegister().setVisible(true);
+            jButton2.setEnabled(false);
+            conn.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(AbonneRegister.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jComboBoxMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jComboBoxMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBoxMouseEntered
+
+    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+        // TODO add your handling code here:
+        Connection conn;
         try {
             //Recuperation de tous les numéros de compteurs
             conn = ConnectBD.BD();
@@ -348,7 +410,7 @@ public class ConsommationRegister extends javax.swing.JFrame {
         } catch (SQLException ex) {
             Logger.getLogger(AbonneRegister.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }//GEN-LAST:event_jComboBoxMouseClicked
+    }//GEN-LAST:event_jButton2MouseClicked
 
     /**
      * @param args the command line arguments
@@ -393,17 +455,15 @@ public class ConsommationRegister extends javax.swing.JFrame {
     private javax.swing.JLabel exitLabel;
     private javax.swing.JTextField fin;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JComboBox<String> jComboBox;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel msg;

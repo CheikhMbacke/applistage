@@ -21,10 +21,10 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author Cheikh Mbacké
  */
-public class ModifDonnees extends javax.swing.JFrame {
+public class Facturation extends javax.swing.JFrame {
 
     /** Creates new form CompteurAffectés */
-    public ModifDonnees() {
+    public Facturation() {
         initComponents();
     }
 
@@ -141,7 +141,6 @@ public class ModifDonnees extends javax.swing.JFrame {
             }
         });
 
-        msg.setEditable(false);
         msg.setBackground(new java.awt.Color(7, 27, 87));
         msg.setFont(new java.awt.Font("Calibri Light", 0, 16)); // NOI18N
         msg.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -319,7 +318,7 @@ public class ModifDonnees extends javax.swing.JFrame {
                 msg.setForeground(Color.red);
             }
         } catch (SQLException ex) {
-            Logger.getLogger(ModifDonnees.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Facturation.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -355,7 +354,7 @@ public class ModifDonnees extends javax.swing.JFrame {
                     msg.setText("L'abonnement a été modifiée");
                     msg.setForeground(Color.red);
                 } catch (SQLException ex) {
-                    Logger.getLogger(ModifDonnees.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Facturation.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
             if(FineRC){
@@ -378,7 +377,7 @@ public class ModifDonnees extends javax.swing.JFrame {
                     msg.setText("La consommation a été modifiée");
                     msg.setForeground(Color.green);
                 } catch (SQLException ex) {
-                    Logger.getLogger(ModifDonnees.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Facturation.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
         }
@@ -386,7 +385,7 @@ public class ModifDonnees extends javax.swing.JFrame {
 
     private void deleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteActionPerformed
         // TODO add your handling code here:
-        DefaultTableModel model=(DefaultTableModel) jTable1.getModel();
+         DefaultTableModel model=(DefaultTableModel) jTable1.getModel();
         if(jTable1.getSelectedRow()==-1){
             if(jTable1.getRowCount()==0){
                 msg.setText("La table est vide");
@@ -408,7 +407,7 @@ public class ModifDonnees extends javax.swing.JFrame {
                     msg.setText("L'abonnement a été supprimée");
                     msg.setForeground(Color.green);
                 } catch (SQLException ex) {
-                    Logger.getLogger(ModifDonnees.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Facturation.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
             if(FineRC){
@@ -423,7 +422,7 @@ public class ModifDonnees extends javax.swing.JFrame {
                     msg.setText("La consommation a été supprimée");
                     msg.setForeground(Color.green);
                 } catch (SQLException ex) {
-                    Logger.getLogger(ModifDonnees.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Facturation.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
         }
@@ -446,14 +445,18 @@ public class ModifDonnees extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ModifDonnees.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Facturation.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ModifDonnees.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Facturation.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ModifDonnees.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Facturation.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ModifDonnees.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Facturation.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -462,7 +465,7 @@ public class ModifDonnees extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ModifDonnees().setVisible(true);
+                new Facturation().setVisible(true);
             }
         });
     }

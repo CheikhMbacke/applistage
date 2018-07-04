@@ -26,6 +26,34 @@ public class ListeAbonne extends javax.swing.JFrame {
     /** Creates new form CompteurAffectés */
     public ListeAbonne() {
         initComponents();
+             Connection conn;
+        try {
+            conn = ConnectBD.BD();
+            Statement st =conn.createStatement();
+            String sql="SELECT nom,prenom,compteur.numCompteur,abonne.numCompteur,cin from abonne,compteur where"+
+                    " compteur.numCompteur=abonne.numCompteur AND compteur.idAbonne<>0";
+            ResultSet rs=st.executeQuery(sql);
+            //TableSet
+            jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nom", "Prénom", "CIN"
+            }
+             ));
+            //END TableSet
+            DefaultTableModel model=(DefaultTableModel) jTable1.getModel();
+            Object[] row = new Object[5];
+             while(rs.next()){
+                row[0]=rs.getString("nom");
+                row[1]=rs.getString("prenom");
+                row[2]=rs.getString("cin");
+                model.addRow(row);
+          }
+        } catch (SQLException ex) {
+            Logger.getLogger(ListeAbonne.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /** This method is called from within the constructor to
@@ -45,7 +73,6 @@ public class ListeAbonne extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jPanel3 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
         msg = new javax.swing.JTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
@@ -121,31 +148,15 @@ public class ListeAbonne extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel2.setFont(new java.awt.Font("Calibri", 0, 16)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(7, 27, 87));
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fcca/image/baseline_account_box_black_24dp.png"))); // NOI18N
-        jLabel2.setText("Afficher les abonnés");
-        jLabel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(7, 27, 87), 2));
-        jLabel2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel2MouseClicked(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 185, Short.MAX_VALUE)
+            .addGap(0, 185, Short.MAX_VALUE)
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(224, 224, 224)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGap(0, 515, Short.MAX_VALUE)
         );
 
         msg.setBackground(new java.awt.Color(7, 27, 87));
@@ -215,38 +226,6 @@ public class ListeAbonne extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
-        // TODO add your handling code here:
-         Connection conn;
-        try {
-            conn = ConnectBD.BD();
-            Statement st =conn.createStatement();
-            String sql="SELECT nom,prenom,compteur.numCompteur,abonne.numCompteur,cin from abonne,compteur where"+
-                    " compteur.numCompteur=abonne.numCompteur AND compteur.idAbonne<>0";
-            ResultSet rs=st.executeQuery(sql);
-            //TableSet
-            jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Nom", "Prénom", "CIN"
-            }
-             ));
-            //END TableSet
-            DefaultTableModel model=(DefaultTableModel) jTable1.getModel();
-            Object[] row = new Object[5];
-             while(rs.next()){
-                row[0]=rs.getString("nom");
-                row[1]=rs.getString("prenom");
-                row[2]=rs.getString("cin");
-                model.addRow(row);
-          }
-        } catch (SQLException ex) {
-            Logger.getLogger(ListeAbonne.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_jLabel2MouseClicked
 
     private void exitLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitLabelMouseClicked
         // TODO add your handling code here:
@@ -338,7 +317,6 @@ public class ListeAbonne extends javax.swing.JFrame {
     private javax.swing.JLabel backLabel;
     private javax.swing.JLabel exitLabel;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;

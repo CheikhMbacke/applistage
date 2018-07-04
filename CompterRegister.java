@@ -7,6 +7,7 @@ package fcca;
 
 import java.awt.Color;
 import java.awt.Toolkit;
+import java.awt.event.KeyEvent;
 import java.awt.event.WindowEvent;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -101,6 +102,11 @@ public class CompterRegister extends javax.swing.JFrame {
         JtextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JtextFieldActionPerformed(evt);
+            }
+        });
+        JtextField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                JtextFieldKeyTyped(evt);
             }
         });
 
@@ -258,6 +264,18 @@ public class CompterRegister extends javax.swing.JFrame {
         this.setVisible(false);
         new Dashboard().setVisible(true);
     }//GEN-LAST:event_backLabelMouseClicked
+
+    private void JtextFieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_JtextFieldKeyTyped
+        // TODO add your handling code here:
+        msg.setText("");
+        char c=evt.getKeyChar();
+        if(!(Character.isDigit(c) || (c==KeyEvent.VK_BACK_SPACE) || c==KeyEvent.VK_DELETE)){
+            getToolkit().beep();
+            evt.consume();
+            msg.setText("Veuiller entrer des chiffres");
+            msg.setForeground(Color.red);
+        }
+    }//GEN-LAST:event_JtextFieldKeyTyped
 
     /**
      * @param args the command line arguments

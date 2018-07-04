@@ -5,8 +5,10 @@
  */
 package fcca;
 
+import static com.sun.javafx.tk.Toolkit.getToolkit;
 import java.awt.Color;
 import java.awt.Toolkit;
+import java.awt.event.KeyEvent;
 import java.awt.event.WindowEvent;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -105,6 +107,11 @@ public class AbonneRegister extends javax.swing.JFrame {
         jLabel6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
 
         tel.setFont(new java.awt.Font("Calibri Light", 0, 16)); // NOI18N
+        tel.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                telKeyTyped(evt);
+            }
+        });
 
         jButton1.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
         jButton1.setForeground(new java.awt.Color(0, 0, 51));
@@ -154,6 +161,11 @@ public class AbonneRegister extends javax.swing.JFrame {
         });
 
         cin.setFont(new java.awt.Font("Calibri Light", 0, 16)); // NOI18N
+        cin.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                cinKeyTyped(evt);
+            }
+        });
 
         nom2.setFont(new java.awt.Font("Calibri Light", 0, 16)); // NOI18N
         nom2.addActionListener(new java.awt.event.ActionListener() {
@@ -338,35 +350,18 @@ public class AbonneRegister extends javax.swing.JFrame {
                     conn = ConnectBD.BD();
                     //Verifier si le numéro de compteur est deja pris ou pas
                     Statement s=conn.createStatement();
-                    ResultSet rs=s.executeQuery("SELECT numCompteur,cin FROM abonne");
-                    Boolean CptExiste = false;
+                    ResultSet rs=s.executeQuery("SELECT cin,nom,prenom,tel FROM abonne");
                     Boolean CptCin = false;
-                    while(rs.next()){
-                        if(rs.getString("numCompteur").equals(numCpt))
-                        {
-                            CptExiste=true;
-                            break;
-                        }
-                    }
+                    
                     while(rs.next()){
                         if(rs.getString("cin").equals(identite))
                         {
-                            CptCin=true;
-                            break;
+                              CptCin=true;
+                              break;
                         }
                     }
-                    if(CptExiste){
-                        errorMessage("le numéro de compteur est déja pris",msg);
-                        Statement statement=conn.createStatement();
-                        ResultSet rst=statement.executeQuery("SELECT idAbonne FROM compteur where idAbonne=0");
-                        if(!rst.first()){
-                            int valReturn=JOptionPane.showConfirmDialog(null, "Plus de compteur disponible,voulez-vous en créer un nouveau?",
-                                    "Nouveau Compteur",JOptionPane.YES_NO_OPTION);
-                            if(valReturn==0)
-                              new CompterRegister().setVisible(true);
-                        }else if(CptCin){
-                            errorMessage("le numéro cin est déja pris",msg);
-                    }
+                    if(CptCin){
+                       errorMessage("le numéro cin est déja pris",msg);
                     }else{
                         //Enregistrement de l'abonné
                         PreparedStatement ps=conn.prepareStatement("INSERT INTO abonne (nom,prenom,adresse,cin,tel,numCompteur)"
@@ -447,17 +442,12 @@ public class AbonneRegister extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-       
-    }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void jComboBoxMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jComboBoxMouseClicked
-        // TODO add your handling code here:
-         Connection conn;
+        Connection conn;
         try {
             //Recuperation de tous les numéros de compteurs
             conn = ConnectBD.BD();
             Statement st=conn.createStatement();
-                String sqlQuery="SELECT numCompteur,idAbonne FROM compteur";
+                String sqlQuery="SELECT numCompteur,idAbonne FROM compteur WHERE idAbonne=0";
                 ResultSet rs=st.executeQuery(sqlQuery);         
                 
                 while(rs.next()){
@@ -465,12 +455,36 @@ public class AbonneRegister extends javax.swing.JFrame {
                 }
                 if(!rs.first())
                     new CompterRegister().setVisible(true);
+                jButton2.setEnabled(false);
                 conn.close();
         } catch (SQLException ex) {
             Logger.getLogger(AbonneRegister.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }//GEN-LAST:event_jComboBoxMouseClicked
+       
+    }//GEN-LAST:event_jButton2ActionPerformed
 
+    private void jComboBoxMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jComboBoxMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBoxMouseClicked
+    private void cinKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cinKeyTyped
+        // TODO add your handling code here:
+        isANumber(evt, msg);
+    }//GEN-LAST:event_cinKeyTyped
+
+    private void telKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_telKeyTyped
+        // TODO add your handling code here:
+        isANumber(evt, msg);
+    }//GEN-LAST:event_telKeyTyped
+      public void isANumber(KeyEvent events,JLabel label){
+          label.setText("");
+        char c=events.getKeyChar();
+        if(!(Character.isDigit(c) || (c==KeyEvent.VK_BACK_SPACE) || c==KeyEvent.VK_DELETE)){
+            getToolkit().beep();
+            events.consume();
+            label.setText("Veuiller entrer des chiffres");
+            label.setForeground(Color.red);
+        }
+    }
     /**
      * @param args the command line arguments
      */
