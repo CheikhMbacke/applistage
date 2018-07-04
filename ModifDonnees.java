@@ -395,7 +395,6 @@ public class ModifDonnees extends javax.swing.JFrame {
                 msg.setForeground(Color.red);
             }
         }else{
-            model.removeRow(jTable1.getSelectedRow());
             if(FineRA){
                 String numCompteur=model.getValueAt(jTable1.getSelectedRow(), 0).toString();
                 Connection conn;
@@ -404,6 +403,7 @@ public class ModifDonnees extends javax.swing.JFrame {
                     PreparedStatement pstate=conn.prepareStatement("DELETE FROM abonne WHERE numCompteur=?");
                     pstate.setString(1, numCompteur);
                     pstate.executeUpdate();
+                    model.removeRow(jTable1.getSelectedRow());
                     msg.setText("L'abonnement a été supprimée");
                     msg.setForeground(Color.green);
                 } catch (SQLException ex) {
@@ -418,6 +418,7 @@ public class ModifDonnees extends javax.swing.JFrame {
                     PreparedStatement pstate=conn.prepareStatement("DELETE FROM consommation WHERE idConsommation=?");
                     pstate.setString(1, ID);
                     pstate.executeUpdate();
+                    model.removeRow(jTable1.getSelectedRow());
                     msg.setText("La consommation a été supprimée");
                     msg.setForeground(Color.green);
                 } catch (SQLException ex) {

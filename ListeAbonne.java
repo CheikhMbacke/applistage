@@ -6,10 +6,12 @@
 
 package fcca;
 
+import java.awt.Color;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JTable;
@@ -44,6 +46,9 @@ public class ListeAbonne extends javax.swing.JFrame {
         jTable1 = new javax.swing.JTable();
         jPanel3 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
+        msg = new javax.swing.JTextField();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable2 = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -104,9 +109,14 @@ public class ListeAbonne extends javax.swing.JFrame {
 
             },
             new String [] {
-                "N° Compteur", "Nom", "Prénom", "CIN"
+                "Nom", "Prénom", "CIN"
             }
         ));
+        jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable1MouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(jTable1);
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
@@ -138,19 +148,54 @@ public class ListeAbonne extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        msg.setBackground(new java.awt.Color(7, 27, 87));
+        msg.setFont(new java.awt.Font("Calibri Light", 0, 16)); // NOI18N
+        msg.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        msg.setBorder(null);
+
+        jTable2.setFont(new java.awt.Font("Calibri Light", 0, 16)); // NOI18N
+        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+
+            }
+        ));
+        jScrollPane2.setViewportView(jTable2);
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 65, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 668, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addComponent(msg, javax.swing.GroupLayout.PREFERRED_SIZE, 469, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(74, 74, 74)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 583, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 76, Short.MAX_VALUE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(173, 173, 173)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 515, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(msg, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(29, 29, 29)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 292, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(29, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -186,23 +231,18 @@ public class ListeAbonne extends javax.swing.JFrame {
 
             },
             new String [] {
-                "N° Compteur", "Nom", "Prénom", "CIN"
+                "Nom", "Prénom", "CIN"
             }
              ));
             //END TableSet
             DefaultTableModel model=(DefaultTableModel) jTable1.getModel();
-            Object[] row = new Object[4];
+            Object[] row = new Object[5];
              while(rs.next()){
-                row[0]=rs.getString("numCompteur");
-                row[1]=rs.getString("nom");
-                row[2]=rs.getString("prenom");
-                row[3]=rs.getString("cin");
+                row[0]=rs.getString("nom");
+                row[1]=rs.getString("prenom");
+                row[2]=rs.getString("cin");
                 model.addRow(row);
           }
-             /*int selectedRow=jTable1.getSelectedRow();
-             if(selectedRow!=-1){
-                 row[selectedRow].
-             }*/
         } catch (SQLException ex) {
             Logger.getLogger(ListeAbonne.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -218,6 +258,45 @@ public class ListeAbonne extends javax.swing.JFrame {
         this.setVisible(false);
         new Dashboard().setVisible(true);
     }//GEN-LAST:event_backLabelMouseClicked
+
+    private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
+        try {
+            jTable2.setModel(new javax.swing.table.DefaultTableModel(
+                    new Object [][] {
+
+                    },
+                    new String [] {
+
+                    }
+                ));
+            Connection conn=ConnectBD.BD();
+            DefaultTableModel model=(DefaultTableModel) jTable1.getModel();
+            DefaultTableModel model2=(DefaultTableModel) jTable2.getModel();
+            if(jTable1.getSelectedRow()==-1){
+                if(jTable1.getRowCount()==0){
+                    msg.setText("La table est vide");
+                    msg.setForeground(Color.red);
+                }else{
+                    msg.setText("Aucune ligne n'est sélectionnée");
+                    msg.setForeground(Color.red);
+                }
+            }else{
+                String CIN=model.getValueAt(jTable1.getSelectedRow(), 2).toString();
+                Statement state=conn.createStatement();
+                ResultSet resultat=state.executeQuery("SELECT numCompteur,nom,prenom FROM abonne WHERE cin='"+CIN+"'");
+                Object row[]=new Object[1];
+                while(resultat.next()){
+                     model2.addColumn("Les N° de Compteurs de "+resultat.getString("nom")+" "+resultat.getString("prenom"));
+                     row[0]=resultat.getString("numCompteur");
+                     model2.addRow(row);
+                }
+                    
+            }
+        } catch (SQLException ex) {
+            //Logger.getLogger(ListeAbonne.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("Erreur:"+ex.getMessage());
+        }
+    }//GEN-LAST:event_jTable1MouseClicked
 
     /**
      * @param args the command line arguments
@@ -264,7 +343,10 @@ public class ListeAbonne extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
+    private javax.swing.JTable jTable2;
+    private javax.swing.JTextField msg;
     // End of variables declaration//GEN-END:variables
 
 }
