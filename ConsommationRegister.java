@@ -217,7 +217,7 @@ public class ConsommationRegister extends javax.swing.JFrame {
         });
         jPanel1.add(ai, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 320, 290, 40));
 
-        jButton2.setBackground(new java.awt.Color(7, 27, 87));
+        jButton2.setBackground(new java.awt.Color(255, 255, 255));
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fcca/image/baseline_cloud_download_black_24dp.png"))); // NOI18N
         jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton2.addMouseListener(new java.awt.event.MouseAdapter() {

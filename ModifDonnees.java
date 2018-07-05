@@ -147,7 +147,7 @@ public class ModifDonnees extends javax.swing.JFrame {
         msg.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         msg.setBorder(null);
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fcca/image/baseline_storage_black_24dp.png"))); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fcca/image/baseline_search_black_24dp.png"))); // NOI18N
         jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -161,8 +161,11 @@ public class ModifDonnees extends javax.swing.JFrame {
         delete.setBackground(new java.awt.Color(255, 255, 255));
         delete.setFont(new java.awt.Font("Calibri Light", 0, 14)); // NOI18N
         delete.setForeground(new java.awt.Color(7, 27, 87));
+        delete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fcca/image/baseline_delete_black_24dp.png"))); // NOI18N
         delete.setText("Supprimer");
         delete.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        delete.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        delete.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
         delete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 deleteActionPerformed(evt);
@@ -172,8 +175,10 @@ public class ModifDonnees extends javax.swing.JFrame {
         update.setBackground(new java.awt.Color(255, 255, 255));
         update.setFont(new java.awt.Font("Calibri Light", 0, 14)); // NOI18N
         update.setForeground(new java.awt.Color(7, 27, 87));
+        update.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fcca/image/baseline_redo_black_24dp.png"))); // NOI18N
         update.setText("Modifier");
         update.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        update.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
         update.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 updateActionPerformed(evt);
@@ -201,9 +206,9 @@ public class ModifDonnees extends javax.swing.JFrame {
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 610, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(170, 170, 170)
-                        .addComponent(delete, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(48, 48, 48)
-                        .addComponent(update, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addComponent(delete)
+                        .addGap(31, 31, 31)
+                        .addComponent(update))))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -265,35 +270,16 @@ public class ModifDonnees extends javax.swing.JFrame {
             //Recherche dans la table des abonnés
             Statement states=conn.createStatement();
             ResultSet resultat=states.executeQuery("SELECT * FROM abonne WHERE nom LIKE '%"+data+"%' OR prenom LIKE '%"+data+"%'"+
-                    "OR cin LIKE '%"+data+"%' OR adresse LIKE '%"+data+"%' OR numCompteur LIKE '%"+data+"%' OR tel LIKE '%"+data+"%'");
+                "OR cin LIKE '%"+data+"%' OR adresse LIKE '%"+data+"%' OR numCompteur LIKE '%"+data+"%' OR tel LIKE '%"+data+"%'");
             
             //Recherche dans la table des consommations
             Statement st=conn.createStatement();
             ResultSet rs=st.executeQuery("SELECT * FROM consommation WHERE dateDebut LIKE '%"+data+"%' OR "+
                     "dateFin LIKE '%"+data+"%' OR AI LIKE '%"+data+"%' OR NI LIKE '%"+data+"%'");
+            //Remplir la table
             if(data.length()==0){
                 msg.setText("Recherche vide");
                 msg.setForeground(Color.red);
-            }else if(rs.first()){
-                FineRC=true;
-                jTable1.setModel(new javax.swing.table.DefaultTableModel(
-                        new Object [][] {
-                            
-                        },
-                        new String [] {
-                            "Date de Debut", "Date de fin", "AI", "NI","ID"
-                        }
-                ));
-                DefaultTableModel model=(DefaultTableModel) jTable1.getModel();
-                Object[] row = new Object[5];
-                while(rs.next()){
-                    row[0]=rs.getDate("dateDebut").toString();
-                    row[1]=rs.getDate("dateFin").toString();
-                    row[2]=rs.getInt("AI");
-                    row[3]=rs.getInt("NI");
-                    row[4]=rs.getInt("idConsommation");
-                    model.addRow(row);
-                }
             }else if(resultat.first()){
                 FineRA=true;
                 jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -314,7 +300,27 @@ public class ModifDonnees extends javax.swing.JFrame {
                         row[4]=resultat.getString("tel");
                         model.addRow(row);
                     }
-            }else{
+            }else if(rs.first()){
+                FineRC=true;
+                jTable1.setModel(new javax.swing.table.DefaultTableModel(
+                        new Object [][] {
+                            
+                        },
+                        new String [] {
+                            "Date de Debut", "Date de fin", "AI", "NI","ID"
+                        }
+                ));
+                DefaultTableModel model=(DefaultTableModel) jTable1.getModel();
+                Object[] row = new Object[5];
+                while(rs.next()){
+                    row[0]=rs.getDate("dateDebut").toString();
+                    row[1]=rs.getDate("dateFin").toString();
+                    row[2]=rs.getInt("AI");
+                    row[3]=rs.getInt("NI");
+                    row[4]=rs.getInt("idConsommation");
+                    model.addRow(row);
+                }
+            }else {
                 msg.setText("Aucun resultat trouvé");
                 msg.setForeground(Color.red);
             }

@@ -217,7 +217,7 @@ public class AbonneRegister extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setBackground(new java.awt.Color(7, 27, 87));
+        jButton2.setBackground(new java.awt.Color(255, 255, 255));
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fcca/image/baseline_cloud_download_black_24dp.png"))); // NOI18N
         jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -373,6 +373,7 @@ public class AbonneRegister extends javax.swing.JFrame {
                         ps.setString(5, numTel);
                         ps.setString(6, numCpt);
                         ps.executeUpdate();
+                        jComboBox.removeItem(numCpt);
 
                         //Affectation du compteur à l'abonné
                         Statement state=conn.createStatement();
@@ -395,7 +396,6 @@ public class AbonneRegister extends javax.swing.JFrame {
                         addr.setText("");
                         cin.setText("");
                         tel.setText("");
-                        jComboBox.setToolTipText(" ");
                     }
                 } catch (SQLException ex) {
                // Logger.getLogger(AbonneRegister.class.getName()).log(Level.SEVERE, null, ex);

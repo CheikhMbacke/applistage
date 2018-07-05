@@ -5,6 +5,7 @@
  */
 package fcca;
 
+import java.awt.Color;
 import javax.swing.JPanel;
 
 /**
@@ -39,13 +40,14 @@ public class Dashboard extends javax.swing.JFrame {
         exitLabel = new javax.swing.JLabel();
         backLabel = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
-        facture = new javax.swing.JLabel();
+        reglage = new javax.swing.JLabel();
         accueil = new javax.swing.JLabel();
         abonnement = new javax.swing.JLabel();
         createCompteur = new javax.swing.JLabel();
         compteur = new javax.swing.JLabel();
         listeAbonne = new javax.swing.JLabel();
         consommation = new javax.swing.JLabel();
+        facture = new javax.swing.JLabel();
         accueilPan = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         consommationPan = new javax.swing.JPanel();
@@ -100,6 +102,12 @@ public class Dashboard extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 exitLabelMouseClicked(evt);
             }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                exitLabelMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                exitLabelMouseReleased(evt);
+            }
         });
 
         backLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -139,19 +147,25 @@ public class Dashboard extends javax.swing.JFrame {
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        facture.setBackground(new java.awt.Color(7, 27, 87));
-        facture.setFont(new java.awt.Font("Calibri Light", 0, 18)); // NOI18N
-        facture.setForeground(new java.awt.Color(7, 27, 87));
-        facture.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        facture.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fcca/image/baseline_euro_symbol_black_24dp.png"))); // NOI18N
-        facture.setText("Facturation");
-        facture.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        facture.addMouseListener(new java.awt.event.MouseAdapter() {
+        reglage.setBackground(new java.awt.Color(7, 27, 87));
+        reglage.setFont(new java.awt.Font("Calibri Light", 0, 18)); // NOI18N
+        reglage.setForeground(new java.awt.Color(7, 27, 87));
+        reglage.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        reglage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fcca/image/baseline_settings_black_24dp.png"))); // NOI18N
+        reglage.setText("Données");
+        reglage.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        reglage.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                factureMouseClicked(evt);
+                reglageMouseClicked(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                reglageMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                reglageMouseReleased(evt);
             }
         });
-        jPanel4.add(facture, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 390, 240, 48));
+        jPanel4.add(reglage, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 440, 240, 48));
 
         accueil.setBackground(new java.awt.Color(7, 27, 87));
         accueil.setFont(new java.awt.Font("Calibri Light", 0, 18)); // NOI18N
@@ -167,6 +181,9 @@ public class Dashboard extends javax.swing.JFrame {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 accueilMousePressed(evt);
             }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                accueilMouseReleased(evt);
+            }
         });
         jPanel4.add(accueil, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 240, 48));
 
@@ -180,6 +197,12 @@ public class Dashboard extends javax.swing.JFrame {
         abonnement.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 abonnementMouseClicked(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                abonnementMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                abonnementMouseReleased(evt);
             }
         });
         jPanel4.add(abonnement, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 140, 240, 48));
@@ -195,6 +218,12 @@ public class Dashboard extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 createCompteurMouseClicked(evt);
             }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                createCompteurMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                createCompteurMouseReleased(evt);
+            }
         });
         jPanel4.add(createCompteur, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 190, 240, 48));
 
@@ -208,6 +237,12 @@ public class Dashboard extends javax.swing.JFrame {
         compteur.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 compteurMouseClicked(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                compteurMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                compteurMouseReleased(evt);
             }
         });
         jPanel4.add(compteur, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 240, 240, 48));
@@ -223,6 +258,12 @@ public class Dashboard extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 listeAbonneMouseClicked(evt);
             }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                listeAbonneMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                listeAbonneMouseReleased(evt);
+            }
         });
         jPanel4.add(listeAbonne, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 290, 240, 48));
 
@@ -237,8 +278,34 @@ public class Dashboard extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 consommationMouseClicked(evt);
             }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                consommationMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                consommationMouseReleased(evt);
+            }
         });
         jPanel4.add(consommation, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 340, 240, 48));
+
+        facture.setBackground(new java.awt.Color(7, 27, 87));
+        facture.setFont(new java.awt.Font("Calibri Light", 0, 18)); // NOI18N
+        facture.setForeground(new java.awt.Color(7, 27, 87));
+        facture.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        facture.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fcca/image/baseline_euro_symbol_black_24dp.png"))); // NOI18N
+        facture.setText("Facturation");
+        facture.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        facture.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                factureMouseClicked(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                factureMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                factureMouseReleased(evt);
+            }
+        });
+        jPanel4.add(facture, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 390, 240, 48));
 
         getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 240, 490));
 
@@ -605,13 +672,11 @@ public class Dashboard extends javax.swing.JFrame {
         indication.setVisible(false);
     }//GEN-LAST:event_abonnementMouseClicked
 
-    private void factureMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_factureMouseClicked
+    private void reglageMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_reglageMouseClicked
         // TODO add your handling code here:
-        settingVisible(facturePan,abonnePan, compteurPan, afficheCompteurPan,listeAbonnePan, consommationPan, 
-                true,false, false,false, false,false);
-        accueilLab.setVisible(false);
-        indication.setVisible(false);
-    }//GEN-LAST:event_factureMouseClicked
+        this.setVisible(false);
+        new ModifDonnees().setVisible(true);
+    }//GEN-LAST:event_reglageMouseClicked
 
     private void createCompteurMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_createCompteurMouseClicked
         // TODO add your handling code here:
@@ -643,6 +708,8 @@ public class Dashboard extends javax.swing.JFrame {
 
     private void facturePanMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_facturePanMouseClicked
         // TODO add your handling code here:
+        this.setVisible(false);
+        new Facturation().setVisible(true);
     }//GEN-LAST:event_facturePanMouseClicked
 
     private void compteurPanMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_compteurPanMouseClicked
@@ -752,6 +819,96 @@ public class Dashboard extends javax.swing.JFrame {
         accueil.setForeground(new java.awt.Color(153,153,153));
     }//GEN-LAST:event_accueilMousePressed
 
+    private void factureMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_factureMouseClicked
+        // TODO add your handling code here:
+        settingVisible(facturePan,abonnePan, compteurPan, afficheCompteurPan,listeAbonnePan, consommationPan, 
+                true,false, false,false, false,false);
+        accueilLab.setVisible(false);
+        indication.setVisible(false);
+    }//GEN-LAST:event_factureMouseClicked
+
+    private void accueilMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_accueilMouseReleased
+        // TODO add your handling code here:
+        accueil.setForeground(new java.awt.Color(7,27,87));
+    }//GEN-LAST:event_accueilMouseReleased
+
+    private void abonnementMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_abonnementMousePressed
+        // TODO add your handling code here:
+        abonnement.setForeground(new java.awt.Color(153,153,153));
+    }//GEN-LAST:event_abonnementMousePressed
+
+    private void abonnementMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_abonnementMouseReleased
+        // TODO add your handling code here:
+        abonnement.setForeground(new java.awt.Color(7,27,87));
+    }//GEN-LAST:event_abonnementMouseReleased
+
+    private void createCompteurMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_createCompteurMousePressed
+        // TODO add your handling code here:
+        createCompteur.setForeground(new java.awt.Color(153,153,153));
+    }//GEN-LAST:event_createCompteurMousePressed
+
+    private void createCompteurMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_createCompteurMouseReleased
+        // TODO add your handling code here:
+        createCompteur.setForeground(new java.awt.Color(7,27,87));
+    }//GEN-LAST:event_createCompteurMouseReleased
+
+    private void compteurMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_compteurMousePressed
+        // TODO add your handling code here:
+        compteur.setForeground(new java.awt.Color(153,153,153));
+    }//GEN-LAST:event_compteurMousePressed
+
+    private void compteurMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_compteurMouseReleased
+        // TODO add your handling code here:
+        compteur.setForeground(new java.awt.Color(7,27,87));
+    }//GEN-LAST:event_compteurMouseReleased
+
+    private void listeAbonneMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listeAbonneMousePressed
+        // TODO add your handling code here:
+        listeAbonne.setForeground(new java.awt.Color(153,153,153));
+    }//GEN-LAST:event_listeAbonneMousePressed
+
+    private void listeAbonneMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listeAbonneMouseReleased
+        // TODO add your handling code here:
+        listeAbonne.setForeground(new java.awt.Color(7,27,87));
+    }//GEN-LAST:event_listeAbonneMouseReleased
+
+    private void consommationMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_consommationMousePressed
+        // TODO add your handling code here:
+        consommation.setForeground(new java.awt.Color(153,153,153));
+    }//GEN-LAST:event_consommationMousePressed
+
+    private void consommationMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_consommationMouseReleased
+        // TODO add your handling code here:
+        consommation.setForeground(new java.awt.Color(7,27,87));
+    }//GEN-LAST:event_consommationMouseReleased
+
+    private void factureMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_factureMousePressed
+        // TODO add your handling code here:
+        facture.setForeground(new java.awt.Color(153,153,153));
+    }//GEN-LAST:event_factureMousePressed
+
+    private void factureMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_factureMouseReleased
+        // TODO add your handling code here:
+        facture.setForeground(new java.awt.Color(7,27,87));
+    }//GEN-LAST:event_factureMouseReleased
+
+    private void reglageMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_reglageMousePressed
+        // TODO add your handling code here:
+        reglage.setForeground(new java.awt.Color(153,153,153));
+    }//GEN-LAST:event_reglageMousePressed
+
+    private void reglageMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_reglageMouseReleased
+        // TODO add your handling code here:
+        accueil.setForeground(new java.awt.Color(7,27,87));
+    }//GEN-LAST:event_reglageMouseReleased
+
+    private void exitLabelMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitLabelMousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_exitLabelMousePressed
+    private void exitLabelMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitLabelMouseReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_exitLabelMouseReleased
+
     /**
      * @param args the command line arguments
      */
@@ -826,5 +983,6 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel logoCompteur3;
     private javax.swing.JLabel logoCompteur7;
     private javax.swing.JLabel logoCompteur8;
+    private javax.swing.JLabel reglage;
     // End of variables declaration//GEN-END:variables
 }

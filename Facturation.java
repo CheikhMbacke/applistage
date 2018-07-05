@@ -42,15 +42,17 @@ public class Facturation extends javax.swing.JFrame {
         exitLabel = new javax.swing.JLabel();
         backLabel = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
+        jPanel3 = new javax.swing.JPanel();
+        CIN = new javax.swing.JLabel();
+        cin = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        nom = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        prenom = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        jPanel3 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
-        msg = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
-        rechercheText = new javax.swing.JTextField();
-        delete = new javax.swing.JButton();
-        update = new javax.swing.JButton();
+        msg = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -88,7 +90,7 @@ public class Facturation extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 708, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(backLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(exitLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -104,17 +106,7 @@ public class Facturation extends javax.swing.JFrame {
         );
 
         jPanel2.setBackground(new java.awt.Color(7, 27, 87));
-
-        jTable1.setFont(new java.awt.Font("Calibri", 0, 16)); // NOI18N
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "N° Compteur", "Nom", "Prénom", "CIN", "Tel"
-            }
-        ));
-        jScrollPane1.setViewportView(jTable1);
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -122,106 +114,94 @@ public class Facturation extends javax.swing.JFrame {
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 185, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 515, Short.MAX_VALUE)
         );
 
-        jLabel3.setFont(new java.awt.Font("Calibri", 0, 16)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("Recherche");
-        jLabel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
-        jLabel3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
+        jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        CIN.setFont(new java.awt.Font("Calibri", 0, 16)); // NOI18N
+        CIN.setForeground(new java.awt.Color(255, 255, 255));
+        CIN.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        CIN.setText("Recherche");
+        CIN.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        CIN.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        CIN.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel3MouseClicked(evt);
+                CINMouseClicked(evt);
             }
         });
+        jPanel2.add(CIN, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 120, 94, 30));
 
-        msg.setBackground(new java.awt.Color(7, 27, 87));
-        msg.setFont(new java.awt.Font("Calibri Light", 0, 16)); // NOI18N
-        msg.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        msg.setBorder(null);
+        cin.setFont(new java.awt.Font("Calibri Light", 0, 16)); // NOI18N
+        jPanel2.add(cin, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 120, 337, 36));
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fcca/image/baseline_storage_black_24dp.png"))); // NOI18N
-        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel6.setFont(new java.awt.Font("Calibri", 0, 16)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel6.setText("Nom");
+        jLabel6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        jLabel6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel6MouseClicked(evt);
+            }
+        });
+        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(439, 42, 94, 30));
+
+        nom.setFont(new java.awt.Font("Calibri Light", 0, 16)); // NOI18N
+        nom.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nomActionPerformed(evt);
+            }
+        });
+        jPanel2.add(nom, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 40, 337, 36));
+
+        jLabel7.setFont(new java.awt.Font("Calibri", 0, 16)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel7.setText("Prénom");
+        jLabel7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        jLabel7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel7MouseClicked(evt);
+            }
+        });
+        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 80, 94, 30));
+
+        prenom.setFont(new java.awt.Font("Calibri Light", 0, 16)); // NOI18N
+        jPanel2.add(prenom, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 80, 337, 36));
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "N° de Compteur", "Date de début", "Date de fin", "Ancien index", "Nouveau index"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
+
+        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 490, 160));
+
+        jButton1.setText("OK");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
+        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 200, 90, 30));
 
-        rechercheText.setFont(new java.awt.Font("Calibri Light", 0, 16)); // NOI18N
-        rechercheText.setText("Rechercher");
-
-        delete.setBackground(new java.awt.Color(255, 255, 255));
-        delete.setFont(new java.awt.Font("Calibri Light", 0, 14)); // NOI18N
-        delete.setForeground(new java.awt.Color(7, 27, 87));
-        delete.setText("Supprimer");
-        delete.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        delete.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                deleteActionPerformed(evt);
-            }
-        });
-
-        update.setBackground(new java.awt.Color(255, 255, 255));
-        update.setFont(new java.awt.Font("Calibri Light", 0, 14)); // NOI18N
-        update.setForeground(new java.awt.Color(7, 27, 87));
-        update.setText("Modifier");
-        update.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        update.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                updateActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(55, 55, 55)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(134, 134, 134)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(4, 4, 4)
-                        .addComponent(rechercheText, javax.swing.GroupLayout.PREFERRED_SIZE, 337, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(6, 6, 6)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(230, 230, 230)
-                        .addComponent(msg, javax.swing.GroupLayout.PREFERRED_SIZE, 337, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 610, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(170, 170, 170)
-                        .addComponent(delete, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(48, 48, 48)
-                        .addComponent(update, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(36, 36, 36)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(rechercheText, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(8, 8, 8)
-                .addComponent(msg, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(17, 17, 17)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(23, 23, 23)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(delete, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(update, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
-        );
+        msg.setEditable(false);
+        msg.setBackground(new java.awt.Color(7, 27, 87));
+        msg.setFont(new java.awt.Font("Calibri Light", 0, 16)); // NOI18N
+        msg.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        msg.setBorder(null);
+        jPanel2.add(msg, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 160, 440, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -251,183 +231,64 @@ public class Facturation extends javax.swing.JFrame {
         this.setVisible(false);
         new Dashboard().setVisible(true);
     }//GEN-LAST:event_backLabelMouseClicked
-    public boolean FineRA=false;
-    public boolean FineRC=false;
-    private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
+
+    private void CINMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CINMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_jLabel3MouseClicked
+    }//GEN-LAST:event_CINMouseClicked
+
+    private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel6MouseClicked
+
+    private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel7MouseClicked
+
+    private void nomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nomActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nomActionPerformed
+
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        msg.setText("");
-        try {
-            String data=rechercheText.getText();
-            Connection conn=ConnectBD.BD();
-            //Recherche dans la table des abonnés
-            Statement states=conn.createStatement();
-            ResultSet resultat=states.executeQuery("SELECT * FROM abonne WHERE nom LIKE '%"+data+"%' OR prenom LIKE '%"+data+"%'"+
-                    "OR cin LIKE '%"+data+"%' OR adresse LIKE '%"+data+"%' OR numCompteur LIKE '%"+data+"%' OR tel LIKE '%"+data+"%'");
-            
-            //Recherche dans la table des consommations
-            Statement st=conn.createStatement();
-            ResultSet rs=st.executeQuery("SELECT * FROM consommation WHERE dateDebut LIKE '%"+data+"%' OR "+
-                    "dateFin LIKE '%"+data+"%' OR AI LIKE '%"+data+"%' OR NI LIKE '%"+data+"%'");
-            if(data.length()==0){
-                msg.setText("Recherche vide");
-                msg.setForeground(Color.red);
-            }else if(rs.first()){
-                FineRC=true;
-                jTable1.setModel(new javax.swing.table.DefaultTableModel(
-                        new Object [][] {
-                            
-                        },
-                        new String [] {
-                            "Date de Debut", "Date de fin", "AI", "NI","ID"
-                        }
-                ));
-                DefaultTableModel model=(DefaultTableModel) jTable1.getModel();
-                Object[] row = new Object[5];
-                while(rs.next()){
-                    row[0]=rs.getDate("dateDebut").toString();
-                    row[1]=rs.getDate("dateFin").toString();
-                    row[2]=rs.getInt("AI");
-                    row[3]=rs.getInt("NI");
-                    row[4]=rs.getInt("idConsommation");
-                    model.addRow(row);
-                }
-            }else if(resultat.first()){
-                FineRA=true;
-                jTable1.setModel(new javax.swing.table.DefaultTableModel(
-                        new Object [][] {
-                            
-                        },
-                        new String [] {
-                            "N° Compteur", "Nom", "Prénom", "CIN","Tel"
-                        }
-                ));
-                DefaultTableModel model=(DefaultTableModel) jTable1.getModel();
-                Object[] row = new Object[5];
-                    while(resultat.next()){
-                        row[0]=resultat.getString("numCompteur");
-                        row[1]=resultat.getString("nom");
-                        row[2]=resultat.getString("prenom");
-                        row[3]=resultat.getString("cin");
-                        row[4]=resultat.getString("tel");
-                        model.addRow(row);
-                    }
-            }else{
-                msg.setText("Aucun resultat trouvé");
-                msg.setForeground(Color.red);
+        // TODO add your handling code here:
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "N° de Compteur", "Date de début", "Date de fin", "Ancien index", "Nouveau index"
             }
+        ));
+        msg.setText("");
+        String name=nom.getText();
+        String surname=prenom.getText();
+        String CIN=cin.getText();
+        try { 
+          Connection conn=ConnectBD.BD();
+          Statement state=conn.createStatement();
+          String sql="SELECT dateDebut,dateFin,AI,NI FROM consommation WHERE idCompteur =(SELECT "+
+                  "idCompteur FROM compteur WHERE numCompteur =(SELECT numCompteur FROM abonne WHERE cin='"+CIN+"'))";
+          ResultSet resultat=state.executeQuery(sql);
+          DefaultTableModel model=(DefaultTableModel) jTable1.getModel();
+          Object[] row=new Object[6];
+          if(resultat.next()){
+              while(resultat.next()){
+                row[0]="NULL";
+                row[1]=resultat.getDate("dateDebut");
+                row[2]=resultat.getDate("dateFin");
+                row[3]=resultat.getInt("AI");
+                row[4]=resultat.getInt("NI");
+                model.addRow(row);
+             }
+          }else{
+              msg.setText("L'abonné n'existe pas veuiller cérifier les informations entrées");
+              msg.setForeground(Color.red);
+          }
         } catch (SQLException ex) {
             Logger.getLogger(Facturation.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void updateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateActionPerformed
-        msg.setText("");
-        DefaultTableModel model=(DefaultTableModel) jTable1.getModel();
-        if(jTable1.getSelectedRow()==-1){
-            if(jTable1.getRowCount()==0){
-                msg.setText("La table est vide");
-                msg.setForeground(Color.red);
-            }else{
-                msg.setText("Aucune ligne n'est sélectionnée");
-                msg.setForeground(Color.red);
-            }
-        }else{
-            if(FineRA){
-                String numCompteur=model.getValueAt(jTable1.getSelectedRow(), 0).toString();
-                String nom=model.getValueAt(jTable1.getSelectedRow(), 1).toString();
-                String prenom=model.getValueAt(jTable1.getSelectedRow(), 2).toString();
-                String cin=model.getValueAt(jTable1.getSelectedRow(), 3).toString();
-                String tel=model.getValueAt(jTable1.getSelectedRow(), 4).toString();
-                Connection conn;
-                try {
-                    conn = ConnectBD.BD();
-                    PreparedStatement pstate=conn.prepareStatement("UPDATE abonne set nom=?,prenom=?,cin=?,tel=? WHERE"+
-                            " numCompteur=?");
-                    pstate.setString(1, nom);
-                    pstate.setString(2, prenom);
-                    pstate.setString(3, cin);
-                    pstate.setString(4, tel);
-                    pstate.setString(5, numCompteur);
-                    pstate.executeUpdate();
-                    msg.setText("L'abonnement a été modifiée");
-                    msg.setForeground(Color.red);
-                } catch (SQLException ex) {
-                    Logger.getLogger(Facturation.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
-            if(FineRC){
-                String dateDebut=model.getValueAt(jTable1.getSelectedRow(), 0).toString();
-                String dateFin=model.getValueAt(jTable1.getSelectedRow(), 1).toString();
-                String AI=model.getValueAt(jTable1.getSelectedRow(), 2).toString();
-                String NI=model.getValueAt(jTable1.getSelectedRow(), 3).toString();
-                String ID=model.getValueAt(jTable1.getSelectedRow(), 4).toString();
-                Connection conn;
-                try {
-                    conn = ConnectBD.BD();
-                    PreparedStatement pstate=conn.prepareStatement("UPDATE consommation set dateDebut=?,dateFin=?,AI=?,NI=?"+
-                            "WHERE idConsommation=?");
-                    pstate.setString(1, dateDebut);
-                    pstate.setString(2, dateFin);
-                    pstate.setString(3, AI);
-                    pstate.setString(4, NI);
-                    pstate.setString(5, ID);
-                    pstate.executeUpdate();
-                    msg.setText("La consommation a été modifiée");
-                    msg.setForeground(Color.green);
-                } catch (SQLException ex) {
-                    Logger.getLogger(Facturation.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
-        }
-    }//GEN-LAST:event_updateActionPerformed
-
-    private void deleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteActionPerformed
-        // TODO add your handling code here:
-         DefaultTableModel model=(DefaultTableModel) jTable1.getModel();
-        if(jTable1.getSelectedRow()==-1){
-            if(jTable1.getRowCount()==0){
-                msg.setText("La table est vide");
-                msg.setForeground(Color.red);
-            }else{
-                msg.setText("Aucune ligne n'est sélectionnée");
-                msg.setForeground(Color.red);
-            }
-        }else{
-            if(FineRA){
-                String numCompteur=model.getValueAt(jTable1.getSelectedRow(), 0).toString();
-                Connection conn;
-                try {
-                    conn = ConnectBD.BD();
-                    PreparedStatement pstate=conn.prepareStatement("DELETE FROM abonne WHERE numCompteur=?");
-                    pstate.setString(1, numCompteur);
-                    pstate.executeUpdate();
-                    model.removeRow(jTable1.getSelectedRow());
-                    msg.setText("L'abonnement a été supprimée");
-                    msg.setForeground(Color.green);
-                } catch (SQLException ex) {
-                    Logger.getLogger(Facturation.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
-            if(FineRC){
-                String ID=model.getValueAt(jTable1.getSelectedRow(), 4).toString();
-                Connection conn;
-                try {
-                    conn = ConnectBD.BD();
-                    PreparedStatement pstate=conn.prepareStatement("DELETE FROM consommation WHERE idConsommation=?");
-                    pstate.setString(1, ID);
-                    pstate.executeUpdate();
-                    model.removeRow(jTable1.getSelectedRow());
-                    msg.setText("La consommation a été supprimée");
-                    msg.setForeground(Color.green);
-                } catch (SQLException ex) {
-                    Logger.getLogger(Facturation.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
-        }
-    }//GEN-LAST:event_deleteActionPerformed
-
+    public boolean FineRA=false;
+    public boolean FineRC=false;
     /**
      * @param args the command line arguments
      */
@@ -471,20 +332,24 @@ public class Facturation extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel CIN;
     private javax.swing.JLabel backLabel;
-    private javax.swing.JButton delete;
+    private javax.swing.JTextField cin;
     private javax.swing.JLabel exitLabel;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField msg;
-    private javax.swing.JTextField rechercheText;
-    private javax.swing.JButton update;
+    private javax.swing.JTextField nom;
+    private javax.swing.JTextField prenom;
     // End of variables declaration//GEN-END:variables
 
 }
