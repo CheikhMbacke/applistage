@@ -271,14 +271,14 @@ public class Facturation extends javax.swing.JFrame {
           DefaultTableModel model=(DefaultTableModel) jTable1.getModel();
           Object[] row=new Object[6];
           if(resultat.next()){
-              while(resultat.next()){
+              do{
                 row[0]="NULL";
                 row[1]=resultat.getDate("dateDebut");
                 row[2]=resultat.getDate("dateFin");
                 row[3]=resultat.getInt("AI");
                 row[4]=resultat.getInt("NI");
                 model.addRow(row);
-             }
+             }while(resultat.next());
           }else{
               msg.setText("L'abonné n'existe pas veuiller cérifier les informations entrées");
               msg.setForeground(Color.red);
