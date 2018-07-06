@@ -292,14 +292,14 @@ public class ModifDonnees extends javax.swing.JFrame {
                 ));
                 DefaultTableModel model=(DefaultTableModel) jTable1.getModel();
                 Object[] row = new Object[5];
-                    while(resultat.next()){
+                    do{
                         row[0]=resultat.getString("numCompteur");
                         row[1]=resultat.getString("nom");
                         row[2]=resultat.getString("prenom");
                         row[3]=resultat.getString("cin");
                         row[4]=resultat.getString("tel");
                         model.addRow(row);
-                    }
+                    }while(resultat.next());
             }else if(rs.first()){
                 FineRC=true;
                 jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -312,14 +312,14 @@ public class ModifDonnees extends javax.swing.JFrame {
                 ));
                 DefaultTableModel model=(DefaultTableModel) jTable1.getModel();
                 Object[] row = new Object[5];
-                while(rs.next()){
+                do{
                     row[0]=rs.getDate("dateDebut").toString();
                     row[1]=rs.getDate("dateFin").toString();
                     row[2]=rs.getInt("AI");
                     row[3]=rs.getInt("NI");
                     row[4]=rs.getInt("idConsommation");
                     model.addRow(row);
-                }
+                }while(rs.next());
             }else {
                 msg.setText("Aucun resultat trouvé");
                 msg.setForeground(Color.red);
@@ -358,8 +358,8 @@ public class ModifDonnees extends javax.swing.JFrame {
                     pstate.setString(4, tel);
                     pstate.setString(5, numCompteur);
                     pstate.executeUpdate();
-                    msg.setText("L'abonnement a été modifiée");
-                    msg.setForeground(Color.red);
+                    msg.setText("L'abonné a été modifiée");
+                    msg.setForeground(Color.green);
                 } catch (SQLException ex) {
                     Logger.getLogger(ModifDonnees.class.getName()).log(Level.SEVERE, null, ex);
                 }

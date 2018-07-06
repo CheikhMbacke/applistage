@@ -126,7 +126,8 @@ public class Facturation extends javax.swing.JFrame {
         CIN.setFont(new java.awt.Font("Calibri", 0, 16)); // NOI18N
         CIN.setForeground(new java.awt.Color(255, 255, 255));
         CIN.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        CIN.setText("Recherche");
+        CIN.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fcca/image/baseline_payment_white_24dp.png"))); // NOI18N
+        CIN.setText("CIN");
         CIN.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
         CIN.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         CIN.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -142,6 +143,7 @@ public class Facturation extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Calibri", 0, 16)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fcca/image/ic_account_circle_white_24dp.png"))); // NOI18N
         jLabel6.setText("Nom");
         jLabel6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
         jLabel6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -163,6 +165,7 @@ public class Facturation extends javax.swing.JFrame {
         jLabel7.setFont(new java.awt.Font("Calibri", 0, 16)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fcca/image/ic_account_circle_white_24dp.png"))); // NOI18N
         jLabel7.setText("Prénom");
         jLabel7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
         jLabel7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -186,7 +189,7 @@ public class Facturation extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(jTable1);
 
-        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 490, 160));
+        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 200, 540, 160));
 
         jButton1.setText("OK");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -265,14 +268,14 @@ public class Facturation extends javax.swing.JFrame {
         try { 
           Connection conn=ConnectBD.BD();
           Statement state=conn.createStatement();
-          String sql="SELECT dateDebut,dateFin,AI,NI FROM consommation WHERE idCompteur =(SELECT "+
+          String sql="SELECT nom,prenom,numCompteur,dateDebut,dateFin,AI,NI FROM abonne,consommation WHERE cin='"+CIN+"' AND idCompteur =(SELECT "+
                   "idCompteur FROM compteur WHERE numCompteur =(SELECT numCompteur FROM abonne WHERE cin='"+CIN+"'))";
           ResultSet resultat=state.executeQuery(sql);
           DefaultTableModel model=(DefaultTableModel) jTable1.getModel();
           Object[] row=new Object[6];
           if(resultat.next()){
               do{
-                row[0]="NULL";
+                row[0]=resultat.getDate("numCompteur");;
                 row[1]=resultat.getDate("dateDebut");
                 row[2]=resultat.getDate("dateFin");
                 row[3]=resultat.getInt("AI");
@@ -343,8 +346,6 @@ public class Facturation extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField msg;

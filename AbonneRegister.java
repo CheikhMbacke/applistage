@@ -374,7 +374,6 @@ public class AbonneRegister extends javax.swing.JFrame {
                         ps.setString(6, numCpt);
                         ps.executeUpdate();
                         jComboBox.removeItem(numCpt);
-
                         //Affectation du compteur à l'abonné
                         Statement state=conn.createStatement();
                         ResultSet rst=state.executeQuery("SELECT idAbonne FROM abonne WHERE numCompteur='"+numCpt+"'");
@@ -396,6 +395,17 @@ public class AbonneRegister extends javax.swing.JFrame {
                         addr.setText("");
                         cin.setText("");
                         tel.setText("");
+                        //Dans le cas ou jComboBox.removeItem vide la liste des compteur
+                        if(jComboBox.isCursorSet()){
+                            if(JOptionPane.showConfirmDialog(null,"I n' ya plus de compteurs disponibles,Voulez-vous en créer un nouveau?", "Créer compteur",
+                                    JOptionPane.YES_NO_OPTION)==0){
+                                new CompterRegister().setVisible(true);
+                            }else{
+                                JOptionPane.showMessageDialog(null, "Vous aller retourner au menu,appuyer sur OK");
+                                this.setVisible(false);
+                                new Dashboard().setVisible(true);
+                            }
+                        }
                     }
                 } catch (SQLException ex) {
                // Logger.getLogger(AbonneRegister.class.getName()).log(Level.SEVERE, null, ex);
@@ -447,16 +457,18 @@ public class AbonneRegister extends javax.swing.JFrame {
             //Recuperation de tous les numéros de compteurs
             conn = ConnectBD.BD();
             Statement st=conn.createStatement();
-                String sqlQuery="SELECT numCompteur,idAbonne FROM compteur WHERE idAbonne=0";
-                ResultSet rs=st.executeQuery(sqlQuery);         
+            String sqlQuery="SELECT numCompteur,idAbonne FROM compteur WHERE idAbonne=0";
+            ResultSet rs=st.executeQuery(sqlQuery);         
                 
-                while(rs.next()){
-                    jComboBox.addItem(rs.getString("numCompteur"));
-                }
-                if(!rs.first())
-                    new CompterRegister().setVisible(true);
-                jButton2.setEnabled(false);
-                conn.close();
+            while(rs.next()){
+                jComboBox.addItem(rs.getString("numCompteur"));
+            }
+            if(!rs.first()){
+                new CompterRegister().setVisible(true);
+                jButton2.setEnabled(true);
+            }
+            jButton2.setEnabled(false);
+            conn.close();
         } catch (SQLException ex) {
             Logger.getLogger(AbonneRegister.class.getName()).log(Level.SEVERE, null, ex);
         }

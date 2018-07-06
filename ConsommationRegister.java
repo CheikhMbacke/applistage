@@ -373,14 +373,14 @@ public class ConsommationRegister extends javax.swing.JFrame {
             //Recuperation de tous les numéros de compteurs
             conn = ConnectBD.BD();
             Statement st=conn.createStatement();
-            String sqlQuery="SELECT numCompteur,idAbonne FROM compteur WHERE idAbonne=0";
+            String sqlQuery="SELECT numCompteur,idAbonne FROM compteur WHERE idAbonne<>0";
             ResultSet rs=st.executeQuery(sqlQuery);
 
             while(rs.next()){
                 jComboBox.addItem(rs.getString("numCompteur"));
             }
             if(!rs.first())
-                new CompterRegister().setVisible(true);
+                JOptionPane.showMessageDialog(null, "Il n'ya plus d'abonnés dans la base");
             jButton2.setEnabled(false);
             conn.close();
         } catch (SQLException ex) {
