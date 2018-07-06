@@ -261,8 +261,7 @@ public class ConsommationRegister extends javax.swing.JFrame {
              String NI=ni.getText();
                  try {
                      if(dateDebut.length()!=0 && dateFin.length()!=0 && AI.length()!=0 && NI.length()!=0 && 
-                             !jComboBox.getSelectedItem().toString().equals("")){
-                         
+                             !jComboBox.getSelectedItem().toString().equals("") && Integer.parseInt(AI)<Integer.parseInt(NI)){
                         cpt= jComboBox.getSelectedItem().toString();
                         Connection conn;
                         conn = ConnectBD.BD();
@@ -314,7 +313,7 @@ public class ConsommationRegister extends javax.swing.JFrame {
                         ai.setText("");
                         ni.setText("");
                         }else{
-                            errorMessage("Veuiller remplir les champs vides", msg);
+                            errorMessage("Veuiller vérifier les champs", msg);
                      }
                  } catch (Exception e) {
                      JOptionPane.showMessageDialog(null, "Veuiller indiquer le numéro de compteur");

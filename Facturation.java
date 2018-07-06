@@ -144,7 +144,7 @@ public class Facturation extends javax.swing.JFrame {
 
         text2.setEditable(false);
         text2.setFont(new java.awt.Font("Calibri Light", 0, 16)); // NOI18N
-        jPanel2.add(text2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 430, 510, 36));
+        jPanel2.add(text2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 430, 540, 36));
 
         jLabel6.setFont(new java.awt.Font("Calibri", 0, 16)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
@@ -222,7 +222,7 @@ public class Facturation extends javax.swing.JFrame {
 
         text1.setEditable(false);
         text1.setFont(new java.awt.Font("Calibri Light", 0, 16)); // NOI18N
-        jPanel2.add(text1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 390, 510, 36));
+        jPanel2.add(text1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 390, 540, 36));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -327,8 +327,9 @@ public class Facturation extends javax.swing.JFrame {
             int newIndex=(int)model.getValueAt(jTable1.getSelectedRow(), 4);
             text1.setVisible(true);
             text2.setVisible(true);
-            text1.setText("Mr(s) "+globaleNom+" "+globalPrenom+", vous avez consommé "+(newIndex-ancienIndex)+" Kwh");
-            text2.setText("Le montant de votre facture s'élève à :"+((newIndex-ancienIndex)*1200)+" Francs CFA");
+            text1.setText("Mr(s) "+globaleNom+" "+globalPrenom+", vous avez consommé "+(newIndex-ancienIndex)+
+                    " Kwh du "+dateDeb+" au "+dateF+".");
+            text2.setText("Le montant de votre facture s'élève à : "+((newIndex-ancienIndex)*1200)+" Francs CFA");
         }
     }//GEN-LAST:event_jTable1MouseClicked
     /**
