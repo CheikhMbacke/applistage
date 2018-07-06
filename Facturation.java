@@ -14,6 +14,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
@@ -26,6 +27,8 @@ public class Facturation extends javax.swing.JFrame {
     /** Creates new form CompteurAffectés */
     public Facturation() {
         initComponents();
+        text1.setVisible(false);
+        text2.setVisible(false);
     }
 
     /** This method is called from within the constructor to
@@ -44,7 +47,7 @@ public class Facturation extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         CIN = new javax.swing.JLabel();
-        cin = new javax.swing.JTextField();
+        text2 = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         nom = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
@@ -53,6 +56,8 @@ public class Facturation extends javax.swing.JFrame {
         jTable1 = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
         msg = new javax.swing.JTextField();
+        cin = new javax.swing.JTextField();
+        text1 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -137,8 +142,9 @@ public class Facturation extends javax.swing.JFrame {
         });
         jPanel2.add(CIN, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 120, 94, 30));
 
-        cin.setFont(new java.awt.Font("Calibri Light", 0, 16)); // NOI18N
-        jPanel2.add(cin, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 120, 337, 36));
+        text2.setEditable(false);
+        text2.setFont(new java.awt.Font("Calibri Light", 0, 16)); // NOI18N
+        jPanel2.add(text2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 430, 510, 36));
 
         jLabel6.setFont(new java.awt.Font("Calibri", 0, 16)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
@@ -187,6 +193,11 @@ public class Facturation extends javax.swing.JFrame {
                 "N° de Compteur", "Date de début", "Date de fin", "Ancien index", "Nouveau index"
             }
         ));
+        jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable1MouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(jTable1);
 
         jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 200, 540, 160));
@@ -205,6 +216,13 @@ public class Facturation extends javax.swing.JFrame {
         msg.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         msg.setBorder(null);
         jPanel2.add(msg, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 160, 440, 30));
+
+        cin.setFont(new java.awt.Font("Calibri Light", 0, 16)); // NOI18N
+        jPanel2.add(cin, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 120, 337, 36));
+
+        text1.setEditable(false);
+        text1.setFont(new java.awt.Font("Calibri Light", 0, 16)); // NOI18N
+        jPanel2.add(text1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 390, 510, 36));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -250,7 +268,11 @@ public class Facturation extends javax.swing.JFrame {
     private void nomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nomActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_nomActionPerformed
-
+    //Déclaration de variable globale
+    private String globaleNom;
+    private String globalPrenom;
+    private boolean FineRA=false;
+    private boolean FineRC=false;
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -269,29 +291,46 @@ public class Facturation extends javax.swing.JFrame {
           Connection conn=ConnectBD.BD();
           Statement state=conn.createStatement();
           String sql="SELECT nom,prenom,numCompteur,dateDebut,dateFin,AI,NI FROM abonne,consommation WHERE cin='"+CIN+"' AND idCompteur =(SELECT "+
-                  "idCompteur FROM compteur WHERE numCompteur =(SELECT numCompteur FROM abonne WHERE cin='"+CIN+"'))";
+           "idCompteur FROM compteur WHERE numCompteur =(SELECT numCompteur FROM abonne WHERE cin='"+CIN+"' AND nom='"+name+"' AND prenom='"+surname+"'))";
           ResultSet resultat=state.executeQuery(sql);
           DefaultTableModel model=(DefaultTableModel) jTable1.getModel();
           Object[] row=new Object[6];
           if(resultat.next()){
               do{
-                row[0]=resultat.getDate("numCompteur");;
+                row[0]=resultat.getString("numCompteur");;
                 row[1]=resultat.getDate("dateDebut");
                 row[2]=resultat.getDate("dateFin");
                 row[3]=resultat.getInt("AI");
                 row[4]=resultat.getInt("NI");
                 model.addRow(row);
+                globaleNom=resultat.getString("nom");
+                globalPrenom=resultat.getString("prenom");
              }while(resultat.next());
           }else{
-              msg.setText("L'abonné n'existe pas veuiller cérifier les informations entrées");
+              msg.setText("L'abonné n'existe pas veuiller vérifier les informations entrées");
               msg.setForeground(Color.red);
           }
         } catch (SQLException ex) {
             Logger.getLogger(Facturation.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
-    public boolean FineRA=false;
-    public boolean FineRC=false;
+
+    private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
+        // TODO add your handling code here:
+        if(jTable1.getSelectedRow()==-1){
+            JOptionPane.showMessageDialog(null, "Veuiller choisir une consommation pour la facturation");
+        }else{
+            DefaultTableModel model =(DefaultTableModel) jTable1.getModel();
+            String dateDeb=model.getValueAt(jTable1.getSelectedRow(), 1).toString();
+            String dateF=model.getValueAt(jTable1.getSelectedRow(), 2).toString();
+            int ancienIndex=(int)model.getValueAt(jTable1.getSelectedRow(), 3);
+            int newIndex=(int)model.getValueAt(jTable1.getSelectedRow(), 4);
+            text1.setVisible(true);
+            text2.setVisible(true);
+            text1.setText("Mr(s) "+globaleNom+" "+globalPrenom+", vous avez consommé "+(newIndex-ancienIndex)+" Kwh");
+            text2.setText("Le montant de votre facture s'élève à :"+((newIndex-ancienIndex)*1200)+" Francs CFA");
+        }
+    }//GEN-LAST:event_jTable1MouseClicked
     /**
      * @param args the command line arguments
      */
@@ -351,6 +390,8 @@ public class Facturation extends javax.swing.JFrame {
     private javax.swing.JTextField msg;
     private javax.swing.JTextField nom;
     private javax.swing.JTextField prenom;
+    private javax.swing.JTextField text1;
+    private javax.swing.JTextField text2;
     // End of variables declaration//GEN-END:variables
 
 }
