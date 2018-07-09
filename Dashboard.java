@@ -185,7 +185,7 @@ public class Dashboard extends javax.swing.JFrame {
                 accueilMouseReleased(evt);
             }
         });
-        jPanel4.add(accueil, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 240, 48));
+        jPanel4.add(accueil, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 240, 50));
 
         abonnement.setBackground(new java.awt.Color(7, 27, 87));
         abonnement.setFont(new java.awt.Font("Calibri Light", 0, 18)); // NOI18N
@@ -205,7 +205,7 @@ public class Dashboard extends javax.swing.JFrame {
                 abonnementMouseReleased(evt);
             }
         });
-        jPanel4.add(abonnement, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 140, 240, 48));
+        jPanel4.add(abonnement, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 190, 240, 48));
 
         createCompteur.setBackground(new java.awt.Color(7, 27, 87));
         createCompteur.setFont(new java.awt.Font("Calibri Light", 0, 18)); // NOI18N
@@ -225,7 +225,7 @@ public class Dashboard extends javax.swing.JFrame {
                 createCompteurMouseReleased(evt);
             }
         });
-        jPanel4.add(createCompteur, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 190, 240, 48));
+        jPanel4.add(createCompteur, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 138, 240, 50));
 
         compteur.setBackground(new java.awt.Color(7, 27, 87));
         compteur.setFont(new java.awt.Font("Calibri Light", 0, 18)); // NOI18N
