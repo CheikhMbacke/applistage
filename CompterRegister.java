@@ -52,6 +52,8 @@ public class CompterRegister extends javax.swing.JFrame {
         JtextField = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         backLabel = new javax.swing.JLabel();
+        copyright = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
 
         jLabel1.setText("jLabel1");
 
@@ -128,6 +130,12 @@ public class CompterRegister extends javax.swing.JFrame {
             }
         });
 
+        copyright.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
+        copyright.setForeground(new java.awt.Color(153, 153, 153));
+        copyright.setText("Copyright (C) 2018 by Cheikh");
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fcca/image/baseline_copyright_white_18dp.png"))); // NOI18N
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -155,7 +163,11 @@ public class CompterRegister extends javax.swing.JFrame {
                             .addContainerGap()))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jButton1)
-                        .addGap(148, 148, 148))))
+                        .addGap(148, 148, 148))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(copyright)
+                        .addGap(8, 8, 8)
+                        .addComponent(jLabel5))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -173,7 +185,10 @@ public class CompterRegister extends javax.swing.JFrame {
                 .addComponent(msg, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton1)
-                .addGap(94, 94, 94))
+                .addGap(76, 76, 76)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(copyright)
+                    .addComponent(jLabel5)))
             .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
@@ -316,12 +331,14 @@ public class CompterRegister extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField JtextField;
     private javax.swing.JLabel backLabel;
+    private javax.swing.JLabel copyright;
     private javax.swing.JLabel exitLabel;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel msg;
     // End of variables declaration//GEN-END:variables

@@ -62,6 +62,8 @@ public class ConsommationRegister extends javax.swing.JFrame {
         fin = new javax.swing.JTextField();
         ai = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
+        copyright = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setUndecorated(true);
@@ -232,6 +234,14 @@ public class ConsommationRegister extends javax.swing.JFrame {
         });
         jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 170, -1, -1));
 
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fcca/image/baseline_copyright_white_18dp.png"))); // NOI18N
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 540, -1, -1));
+
+        copyright.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
+        copyright.setForeground(new java.awt.Color(153, 153, 153));
+        copyright.setText("Copyright (C) 2018 by Cheikh");
+        jPanel1.add(copyright, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 540, -1, -1));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -240,7 +250,7 @@ public class ConsommationRegister extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -450,6 +460,7 @@ public class ConsommationRegister extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField ai;
     private javax.swing.JLabel backLabel;
+    private javax.swing.JLabel copyright;
     private javax.swing.JTextField debut;
     private javax.swing.JLabel exitLabel;
     private javax.swing.JTextField fin;
@@ -462,6 +473,7 @@ public class ConsommationRegister extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;

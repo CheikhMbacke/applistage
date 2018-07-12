@@ -26,7 +26,7 @@ public class FCCA {
                     acc.loadingBar.setValue(i);
                     if(i==100){
                         acc.setVisible(false);
-                        new Dashboard().setVisible(true);
+                        new Authentification().setVisible(true);
                      }
                 }
               }catch (Exception ex) {

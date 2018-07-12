@@ -58,14 +58,21 @@ public class Facturation extends javax.swing.JFrame {
         msg = new javax.swing.JTextField();
         cin = new javax.swing.JTextField();
         text1 = new javax.swing.JTextField();
+        copyright = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel1.setFont(new java.awt.Font("Calibri Light", 1, 16)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(7, 27, 87));
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fcca/image/logo.PNG"))); // NOI18N
+        jLabel1.setText("Facturation");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 210, 40));
 
         exitLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         exitLabel.setForeground(new java.awt.Color(255, 255, 255));
@@ -77,6 +84,7 @@ public class Facturation extends javax.swing.JFrame {
                 exitLabelMouseClicked(evt);
             }
         });
+        jPanel1.add(exitLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(858, 0, 34, 35));
 
         backLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         backLabel.setForeground(new java.awt.Color(255, 255, 255));
@@ -88,27 +96,7 @@ public class Facturation extends javax.swing.JFrame {
                 backLabelMouseClicked(evt);
             }
         });
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(backLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(exitLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(exitLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(backLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
+        jPanel1.add(backLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(818, 0, 34, 35));
 
         jPanel2.setBackground(new java.awt.Color(7, 27, 87));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -143,8 +131,17 @@ public class Facturation extends javax.swing.JFrame {
         jPanel2.add(CIN, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 120, 94, 30));
 
         text2.setEditable(false);
+        text2.setBackground(new java.awt.Color(7, 27, 87));
         text2.setFont(new java.awt.Font("Calibri Light", 0, 16)); // NOI18N
-        jPanel2.add(text2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 430, 540, 36));
+        text2.setForeground(new java.awt.Color(255, 255, 255));
+        text2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        text2.setBorder(null);
+        text2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                text2ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(text2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 470, 470, 36));
 
         jLabel6.setFont(new java.awt.Font("Calibri", 0, 16)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
@@ -200,15 +197,20 @@ public class Facturation extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jTable1);
 
-        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 200, 540, 160));
+        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 240, 610, 180));
 
-        jButton1.setText("OK");
+        jButton1.setBackground(new java.awt.Color(255, 255, 255));
+        jButton1.setFont(new java.awt.Font("Calibri Light", 0, 14)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(7, 27, 87));
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fcca/image/baseline_check_circle_black_24dp.png"))); // NOI18N
+        jButton1.setText("Valider");
+        jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 200, 90, 30));
+        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 200, 110, 40));
 
         msg.setEditable(false);
         msg.setBackground(new java.awt.Color(7, 27, 87));
@@ -221,22 +223,32 @@ public class Facturation extends javax.swing.JFrame {
         jPanel2.add(cin, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 120, 337, 36));
 
         text1.setEditable(false);
+        text1.setBackground(new java.awt.Color(7, 27, 87));
         text1.setFont(new java.awt.Font("Calibri Light", 0, 16)); // NOI18N
-        jPanel2.add(text1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 390, 540, 36));
+        text1.setForeground(new java.awt.Color(255, 255, 255));
+        text1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        text1.setBorder(null);
+        jPanel2.add(text1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 430, 660, 36));
+
+        copyright.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
+        copyright.setForeground(new java.awt.Color(153, 153, 153));
+        copyright.setText("Copyright (C) 2018 by Cheikh");
+        jPanel2.add(copyright, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 510, -1, 30));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fcca/image/baseline_copyright_white_18dp.png"))); // NOI18N
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 510, -1, 20));
+
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 43, 890, 540));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(1, 1, 1)
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -326,12 +338,18 @@ public class Facturation extends javax.swing.JFrame {
             int ancienIndex=(int)model.getValueAt(jTable1.getSelectedRow(), 3);
             int newIndex=(int)model.getValueAt(jTable1.getSelectedRow(), 4);
             text1.setVisible(true);
-            text2.setVisible(true);
+            text1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 1));
             text1.setText("Mr(s) "+globaleNom+" "+globalPrenom+", vous avez consommé "+(newIndex-ancienIndex)+
                     " Kwh du "+dateDeb+" au "+dateF+".");
+            text2.setVisible(true);
+            text2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 1));
             text2.setText("Le montant de votre facture s'élève à : "+((newIndex-ancienIndex)*1200)+" Francs CFA");
         }
     }//GEN-LAST:event_jTable1MouseClicked
+
+    private void text2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_text2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_text2ActionPerformed
     /**
      * @param args the command line arguments
      */
@@ -378,9 +396,11 @@ public class Facturation extends javax.swing.JFrame {
     private javax.swing.JLabel CIN;
     private javax.swing.JLabel backLabel;
     private javax.swing.JTextField cin;
+    private javax.swing.JLabel copyright;
     private javax.swing.JLabel exitLabel;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;

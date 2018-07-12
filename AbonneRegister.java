@@ -32,6 +32,8 @@ public class AbonneRegister extends javax.swing.JFrame {
      */
     public AbonneRegister() {
         initComponents();
+        nom2.setEditable(false);
+        nom2.setBackground(new java.awt.Color(204,204,204));
     }
 
     /**
@@ -64,6 +66,8 @@ public class AbonneRegister extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         jComboBox = new javax.swing.JComboBox<>();
         jButton2 = new javax.swing.JButton();
+        copyright = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setUndecorated(true);
@@ -247,6 +251,14 @@ public class AbonneRegister extends javax.swing.JFrame {
         });
         jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 420, -1, -1));
 
+        copyright.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
+        copyright.setForeground(new java.awt.Color(153, 153, 153));
+        copyright.setText("Copyright (C) 2018 by Cheikh");
+        jPanel1.add(copyright, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 540, -1, -1));
+
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fcca/image/baseline_copyright_white_18dp.png"))); // NOI18N
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 540, -1, -1));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -255,7 +267,7 @@ public class AbonneRegister extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -472,6 +484,7 @@ public class AbonneRegister extends javax.swing.JFrame {
     private javax.swing.JTextField addr;
     private javax.swing.JLabel backLabel;
     private javax.swing.JTextField cin;
+    private javax.swing.JLabel copyright;
     private javax.swing.JLabel exitLabel;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
@@ -484,6 +497,7 @@ public class AbonneRegister extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel msg;
