@@ -364,12 +364,12 @@
           <Properties>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/fcca/image/images (1).jpg"/>
+              <Image iconType="3" name="/fcca/image/team.png"/>
             </Property>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="480" y="10" width="-1" height="200"/>
+              <AbsoluteConstraints x="520" y="10" width="-1" height="200"/>
             </Constraint>
           </Constraints>
         </Component>

@@ -163,7 +163,7 @@
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/fcca/image/baseline_settings_black_24dp.png"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Donn&#xe9;es"/>
+            <Property name="text" type="java.lang.String" value="G&#xe9;rer les donn&#xe9;es"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
               <Color id="Curseur en forme de main"/>
             </Property>
@@ -225,7 +225,7 @@
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/fcca/image/baseline_account_circle_black_24dp.png"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Abonnement"/>
+            <Property name="text" type="java.lang.String" value="Cr&#xe9;er un abonn&#xe9;"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
               <Color id="Curseur en forme de main"/>
             </Property>
@@ -318,7 +318,7 @@
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/fcca/image/baseline_account_box_black_24dp.png"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Abonn&#xe9;s"/>
+            <Property name="text" type="java.lang.String" value="Lister les abonn&#xe9;s"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
               <Color id="Curseur en forme de main"/>
             </Property>
@@ -349,7 +349,7 @@
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/fcca/image/baseline_ev_station_black_24dp.png"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Consommation"/>
+            <Property name="text" type="java.lang.String" value="Cr&#xe9;er une consommation"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
               <Color id="Curseur en forme de main"/>
             </Property>
@@ -380,7 +380,7 @@
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/fcca/image/baseline_euro_symbol_black_24dp.png"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Facturation"/>
+            <Property name="text" type="java.lang.String" value="Facturer une consommation"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
               <Color id="Curseur en forme de main"/>
             </Property>

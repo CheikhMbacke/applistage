@@ -26,7 +26,10 @@ public class ListeAbonne extends javax.swing.JFrame {
     /** Creates new form CompteurAffectés */
     public ListeAbonne() {
         initComponents();
-             Connection conn;
+        ImportAbonne();
+    }
+    public void ImportAbonne(){
+        Connection conn;
         try {
             conn = ConnectBD.BD();
             Statement st =conn.createStatement();

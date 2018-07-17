@@ -153,8 +153,8 @@ public class CompteurAffectés extends javax.swing.JFrame {
         });
         jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 350, 220, 50));
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fcca/image/téléchargement (2).png"))); // NOI18N
-        jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 220, 219));
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fcca/image/approved.png"))); // NOI18N
+        jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, 150, 219));
 
         copyright.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
         copyright.setForeground(new java.awt.Color(153, 153, 153));
@@ -212,6 +212,7 @@ public class CompteurAffectés extends javax.swing.JFrame {
         // TODO add your handling code here:
          Connection conn;
         try {
+            //Extraire les compteurs affectés
             conn = ConnectBD.BD();
             Statement st =conn.createStatement();
             String sql="SELECT nom,prenom,compteur.numCompteur,abonne.numCompteur,cin from abonne,compteur where"+
@@ -245,6 +246,7 @@ public class CompteurAffectés extends javax.swing.JFrame {
         // TODO add your handling code here:
         Connection conn;
         try {
+            //Extraire les compteurs non affectés
             conn = ConnectBD.BD();
             Statement st =conn.createStatement();
             String sql="SELECT numCompteur,idAbonne FROM compteur where idAbonne=0";

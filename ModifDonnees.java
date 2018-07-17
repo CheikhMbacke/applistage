@@ -170,7 +170,11 @@ public class ModifDonnees extends javax.swing.JFrame {
         });
 
         rechercheText.setFont(new java.awt.Font("Calibri Light", 0, 16)); // NOI18N
-        rechercheText.setText("Rechercher");
+        rechercheText.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rechercheTextActionPerformed(evt);
+            }
+        });
 
         delete.setBackground(new java.awt.Color(255, 255, 255));
         delete.setFont(new java.awt.Font("Calibri Light", 0, 14)); // NOI18N
@@ -462,6 +466,10 @@ public class ModifDonnees extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_deleteActionPerformed
+
+    private void rechercheTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rechercheTextActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rechercheTextActionPerformed
 
     /**
      * @param args the command line arguments

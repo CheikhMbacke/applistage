@@ -32,8 +32,6 @@ public class AbonneRegister extends javax.swing.JFrame {
      */
     public AbonneRegister() {
         initComponents();
-        nom2.setEditable(false);
-        nom2.setBackground(new java.awt.Color(204,204,204));
     }
 
     /**
@@ -204,8 +202,8 @@ public class AbonneRegister extends javax.swing.JFrame {
         jPanel1.add(prenom, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 260, 289, 35));
 
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fcca/image/images (1).jpg"))); // NOI18N
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 10, -1, 200));
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fcca/image/team.png"))); // NOI18N
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 10, -1, 200));
 
         backLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         backLabel.setForeground(new java.awt.Color(255, 255, 255));

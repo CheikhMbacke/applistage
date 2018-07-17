@@ -139,7 +139,7 @@ public class Dashboard extends javax.swing.JFrame {
         reglage.setForeground(new java.awt.Color(7, 27, 87));
         reglage.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         reglage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fcca/image/baseline_settings_black_24dp.png"))); // NOI18N
-        reglage.setText("Données");
+        reglage.setText("Gérer les données");
         reglage.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         reglage.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -179,7 +179,7 @@ public class Dashboard extends javax.swing.JFrame {
         abonnement.setForeground(new java.awt.Color(7, 27, 87));
         abonnement.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         abonnement.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fcca/image/baseline_account_circle_black_24dp.png"))); // NOI18N
-        abonnement.setText("Abonnement");
+        abonnement.setText("Créer un abonné");
         abonnement.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         abonnement.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -239,7 +239,7 @@ public class Dashboard extends javax.swing.JFrame {
         listeAbonne.setForeground(new java.awt.Color(7, 27, 87));
         listeAbonne.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         listeAbonne.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fcca/image/baseline_account_box_black_24dp.png"))); // NOI18N
-        listeAbonne.setText("Abonnés");
+        listeAbonne.setText("Lister les abonnés");
         listeAbonne.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         listeAbonne.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -259,7 +259,7 @@ public class Dashboard extends javax.swing.JFrame {
         consommation.setForeground(new java.awt.Color(7, 27, 87));
         consommation.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         consommation.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fcca/image/baseline_ev_station_black_24dp.png"))); // NOI18N
-        consommation.setText("Consommation");
+        consommation.setText("Créer une consommation");
         consommation.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         consommation.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -279,7 +279,7 @@ public class Dashboard extends javax.swing.JFrame {
         facture.setForeground(new java.awt.Color(7, 27, 87));
         facture.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         facture.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fcca/image/baseline_euro_symbol_black_24dp.png"))); // NOI18N
-        facture.setText("Facturation");
+        facture.setText("Facturer une consommation");
         facture.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         facture.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
