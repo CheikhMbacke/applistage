@@ -130,7 +130,7 @@ public class Facturation extends javax.swing.JFrame {
                 CINMouseClicked(evt);
             }
         });
-        jPanel2.add(CIN, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 120, 94, 30));
+        jPanel2.add(CIN, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 30, 94, 30));
 
         text2.setEditable(false);
         text2.setBackground(new java.awt.Color(7, 27, 87));
@@ -157,15 +157,16 @@ public class Facturation extends javax.swing.JFrame {
                 jLabel6MouseClicked(evt);
             }
         });
-        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(439, 42, 94, 30));
+        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 150, 94, 30));
 
+        nom.setEditable(false);
         nom.setFont(new java.awt.Font("Calibri Light", 0, 16)); // NOI18N
         nom.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nomActionPerformed(evt);
             }
         });
-        jPanel2.add(nom, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 40, 337, 36));
+        jPanel2.add(nom, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 190, 337, 36));
 
         jLabel7.setFont(new java.awt.Font("Calibri", 0, 16)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
@@ -179,10 +180,11 @@ public class Facturation extends javax.swing.JFrame {
                 jLabel7MouseClicked(evt);
             }
         });
-        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 80, 94, 30));
+        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 190, 94, 30));
 
+        prenom.setEditable(false);
         prenom.setFont(new java.awt.Font("Calibri Light", 0, 16)); // NOI18N
-        jPanel2.add(prenom, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 80, 337, 36));
+        jPanel2.add(prenom, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 150, 337, 36));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -212,17 +214,17 @@ public class Facturation extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 200, 110, 40));
+        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 100, 110, 40));
 
         msg.setEditable(false);
         msg.setBackground(new java.awt.Color(7, 27, 87));
         msg.setFont(new java.awt.Font("Calibri Light", 0, 16)); // NOI18N
         msg.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         msg.setBorder(null);
-        jPanel2.add(msg, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 160, 440, 30));
+        jPanel2.add(msg, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 70, 440, 30));
 
         cin.setFont(new java.awt.Font("Calibri Light", 0, 16)); // NOI18N
-        jPanel2.add(cin, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 120, 337, 36));
+        jPanel2.add(cin, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 30, 337, 36));
 
         text1.setEditable(false);
         text1.setBackground(new java.awt.Color(7, 27, 87));
@@ -306,14 +308,14 @@ public class Facturation extends javax.swing.JFrame {
             }
         ));
         msg.setText("");
-        String name=nom.getText();
-        String surname=prenom.getText();
         String CIN=cin.getText();
         try { 
+            //Affichage des consommations de l'abonné à facturer
           Connection conn=ConnectBD.BD();
           Statement state=conn.createStatement();
-          String sql="SELECT nom,prenom,numCompteur,dateDebut,dateFin,AI,NI FROM abonne,consommation WHERE cin='"+CIN+"' AND idCompteur =(SELECT "+
-           "idCompteur FROM compteur WHERE numCompteur =(SELECT numCompteur FROM abonne WHERE cin='"+CIN+"' AND nom='"+name+"' AND prenom='"+surname+"'))";
+          String sql="SELECT nom,prenom,numCompteur,dateDebut,dateFin,AI,NI FROM abonne,consommation WHERE cin='"+CIN+"'"+
+                  "AND Etat=0 AND idCompteur =(SELECT "+
+           "idCompteur FROM compteur WHERE numCompteur =(SELECT numCompteur FROM abonne WHERE cin='"+CIN+"'))";
           ResultSet resultat=state.executeQuery(sql);
           DefaultTableModel model=(DefaultTableModel) jTable1.getModel();
           Object[] row=new Object[6];
@@ -328,8 +330,10 @@ public class Facturation extends javax.swing.JFrame {
                 globaleNom=resultat.getString("nom");
                 globalPrenom=resultat.getString("prenom");
              }while(resultat.next());
+              nom.setText(globaleNom);
+              prenom.setText(globalPrenom);
           }else{
-              msg.setText("L'abonné n'existe pas veuiller vérifier les informations entrées");
+              msg.setText("Aucune consommation n'est enregistrée sur ces identifiants");
               msg.setForeground(Color.red);
           }
         } catch (SQLException ex) {
@@ -339,6 +343,8 @@ public class Facturation extends javax.swing.JFrame {
 
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
         // TODO add your handling code here:
+        text1.setVisible(false);
+        text2.setVisible(false);
         if(jTable1.getSelectedRow()==-1){
             JOptionPane.showMessageDialog(null, "Veuiller choisir une consommation pour la facturation");
         }else{
@@ -347,6 +353,21 @@ public class Facturation extends javax.swing.JFrame {
             String dateF=model.getValueAt(jTable1.getSelectedRow(), 2).toString();
             int ancienIndex=(int)model.getValueAt(jTable1.getSelectedRow(), 3);
             int newIndex=(int)model.getValueAt(jTable1.getSelectedRow(), 4);
+            //Mise à Etat 1 de la consommation sélectionnée
+            Connection conn;
+            try {
+                conn = ConnectBD.BD();
+                 PreparedStatement pstate=conn.prepareStatement("UPDATE consommation SET Etat=1 WHERE "+
+                         "dateDebut=? AND dateFin=? AND AI=? AND NI=?");
+                    pstate.setString(1, dateDeb);
+                    pstate.setString(2, dateF);
+                    pstate.setInt(3, ancienIndex);
+                    pstate.setInt(4, newIndex);
+                    pstate.executeUpdate();
+            } catch (SQLException ex) {
+                Logger.getLogger(Facturation.class.getName()).log(Level.SEVERE, null, ex);
+            }
+           //Affichage de la facture
             text1.setVisible(true);
             text1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 1));
             text1.setText("Mr(s) "+globaleNom+" "+globalPrenom+", vous avez consommé "+(newIndex-ancienIndex)+

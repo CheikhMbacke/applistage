@@ -33,8 +33,8 @@ public class ListeAbonne extends javax.swing.JFrame {
         try {
             conn = ConnectBD.BD();
             Statement st =conn.createStatement();
-            String sql="SELECT nom,prenom,compteur.numCompteur,abonne.numCompteur,cin from abonne,compteur where"+
-                    " compteur.numCompteur=abonne.numCompteur AND compteur.idAbonne<>0";
+            String sql="SELECT DISTINCT nom,prenom,compteur.numCompteur,abonne.numCompteur,cin from abonne,compteur where"+
+                    " compteur.numCompteur=abonne.numCompteur AND compteur.idAbonne<>0 GROUP BY cin";
             ResultSet rs=st.executeQuery(sql);
             //TableSet
             jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -292,11 +292,13 @@ public class ListeAbonne extends javax.swing.JFrame {
                 ResultSet resultat=state.executeQuery("SELECT numCompteur,nom,prenom FROM abonne WHERE cin='"+CIN+"'");
                 Object row[]=new Object[1];
                 while(resultat.next()){
-                     model2.addColumn("Les N° de Compteurs de "+resultat.getString("nom")+" "+resultat.getString("prenom"));
-                     row[0]=resultat.getString("numCompteur");
-                     model2.addRow(row);
+                    model2.addColumn("Les N° de Compteurs de "+resultat.getString("nom")+" "+resultat.getString("prenom"));
+                    break;
                 }
-                    
+                do{
+                    row[0]=resultat.getString("numCompteur");
+                    model2.addRow(row);
+                }while(resultat.next());
             }
         } catch (SQLException ex) {
             //Logger.getLogger(ListeAbonne.class.getName()).log(Level.SEVERE, null, ex);

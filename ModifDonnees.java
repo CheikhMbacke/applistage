@@ -439,8 +439,9 @@ public class ModifDonnees extends javax.swing.JFrame {
                 Connection conn;
                 try {
                     conn = ConnectBD.BD();
-                    PreparedStatement pstate=conn.prepareStatement("DELETE FROM abonne WHERE numCompteur=?");
-                    pstate.setString(1, numCompteur);
+                    PreparedStatement pstate=conn.prepareStatement("UPDATE abonne set TypeAbonne=? WHERE numCompteur=?");
+                    pstate.setString(1, "R");
+                    pstate.setString(2, numCompteur);
                     pstate.executeUpdate();
                     model.removeRow(jTable1.getSelectedRow());
                     msg.setText("L'abonnement a été supprimée");

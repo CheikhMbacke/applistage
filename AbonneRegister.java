@@ -302,22 +302,25 @@ public class AbonneRegister extends javax.swing.JFrame {
                     while(rs.next()){
                         if(rs.getString("cin").equals(identite))
                         {
-                              CptCin=true;
-                              break;
+                            if(!rs.getString("nom").equals(name) || !rs.getString("prenom").equals(surname)){
+                                CptCin=true;
+                            }
+                            break;
                         }
                     }
                     if(CptCin){
                        errorMessage("le numéro cin est déja pris",msg);
                     }else{
                         //Enregistrement de l'abonné
-                        PreparedStatement ps=conn.prepareStatement("INSERT INTO abonne (nom,prenom,adresse,cin,tel,numCompteur)"
-                            +" VALUES (?,?,?,?,?,?)");
+                        PreparedStatement ps=conn.prepareStatement("INSERT INTO abonne (nom,prenom,adresse,cin,tel,numCompteur,TypeAbonne)"
+                            +" VALUES (?,?,?,?,?,?,?)");
                         ps.setString(1, name.toLowerCase());
                         ps.setString(2, surname.toLowerCase());
                         ps.setString(3, adresse.toLowerCase());
                         ps.setString(4, identite);
                         ps.setString(5, numTel);
                         ps.setString(6, numCpt);
+                        ps.setString(7, "A");
                         ps.executeUpdate();
                         jComboBox.removeItem(numCpt);
                         //Affectation du compteur à l'abonné
@@ -342,13 +345,14 @@ public class AbonneRegister extends javax.swing.JFrame {
                         cin.setText("");
                         tel.setText("");
                         //Dans le cas ou jComboBox.removeItem vide la liste des compteur
-                        if(jComboBox.isCursorSet()){
+                        if(jComboBox.getItemCount()==0){
                             if(JOptionPane.showConfirmDialog(null,"I n' ya plus de compteurs disponibles,Voulez-vous en créer un nouveau?", "Créer compteur",
                                     JOptionPane.YES_NO_OPTION)==0){
+                                jButton2.setEnabled(true);
                                 new CompterRegister().setVisible(true);
                             }else{
                                 JOptionPane.showMessageDialog(null, "Vous aller retourner au menu,appuyer sur OK");
-                                this.setVisible(false);
+                                jButton2.setEnabled(false);
                                 new Dashboard().setVisible(true);
                             }
                         }
@@ -409,11 +413,11 @@ public class AbonneRegister extends javax.swing.JFrame {
             while(rs.next()){
                 jComboBox.addItem(rs.getString("numCompteur"));
             }
-            if(!rs.first()){
-                new CompterRegister().setVisible(true);
-                jButton2.setEnabled(true);
-            }
             jButton2.setEnabled(false);
+            if(!rs.first()){
+                jButton2.setEnabled(true);
+                new CompterRegister().setVisible(true);
+            }
             conn.close();
         } catch (SQLException ex) {
             Logger.getLogger(AbonneRegister.class.getName()).log(Level.SEVERE, null, ex);

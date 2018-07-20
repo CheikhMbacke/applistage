@@ -300,7 +300,7 @@ public class ConsommationRegister extends javax.swing.JFrame {
                         }
                          
                         PreparedStatement ps=conn.prepareStatement("INSERT INTO consommation (dateDebut,dateFin,AI,"+
-                            "NI,idCompteur) VALUES (?,?,?,?,?)");
+                            "NI,idCompteur,Etat) VALUES (?,?,?,?,?,?)");
                         //Verification du format de la date   
                          try {
                              ps.setDate(1, java.sql.Date.valueOf(dateDebut));
@@ -312,6 +312,7 @@ public class ConsommationRegister extends javax.swing.JFrame {
                         ps.setInt(3, Integer.parseInt(AI));
                         ps.setInt(4, Integer.parseInt(NI));
                         ps.setInt(5, idCpt);
+                        ps.setInt(6, 0);
                         ps.executeUpdate();
                         conn.close();
                         //message
@@ -382,7 +383,7 @@ public class ConsommationRegister extends javax.swing.JFrame {
             //Recuperation de tous les numéros de compteurs
             conn = ConnectBD.BD();
             Statement st=conn.createStatement();
-            String sqlQuery="SELECT numCompteur,idAbonne FROM compteur WHERE idAbonne<>0";
+            String sqlQuery="SELECT numCompteur,idAbonne FROM abonne WHERE TypeAbonne='A'";
             ResultSet rs=st.executeQuery(sqlQuery);
 
             while(rs.next()){
@@ -404,21 +405,6 @@ public class ConsommationRegister extends javax.swing.JFrame {
 
     private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
         // TODO add your handling code here:
-        Connection conn;
-        try {
-            //Recuperation de tous les numéros de compteurs
-            conn = ConnectBD.BD();
-            Statement st=conn.createStatement();
-                String sqlQuery="SELECT numCompteur FROM compteur WHERE idAbonne<>0";
-                ResultSet rs=st.executeQuery(sqlQuery);         
-                
-                while(rs.next()){
-                    jComboBox.addItem(rs.getString("numCompteur"));
-                }
-                conn.close();
-        } catch (SQLException ex) {
-            Logger.getLogger(AbonneRegister.class.getName()).log(Level.SEVERE, null, ex);
-        }
     }//GEN-LAST:event_jButton2MouseClicked
 
     /**
