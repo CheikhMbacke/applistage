@@ -313,9 +313,9 @@ public class Facturation extends javax.swing.JFrame {
             //Affichage des consommations de l'abonné à facturer
           Connection conn=ConnectBD.BD();
           Statement state=conn.createStatement();
-          String sql="SELECT nom,prenom,numCompteur,dateDebut,dateFin,AI,NI FROM abonne,consommation WHERE cin='"+CIN+"'"+
-                  "AND Etat=0 AND idCompteur =(SELECT "+
-           "idCompteur FROM compteur WHERE numCompteur =(SELECT numCompteur FROM abonne WHERE cin='"+CIN+"'))";
+          String sql="SELECT DISTINCT nom,prenom,numCompteur,dateDebut,dateFin,AI,NI FROM abonne,consommation WHERE cin='"+CIN+"'"+
+                  "AND Etat=0 AND idCompteur IN (SELECT "+
+           "idCompteur FROM compteur WHERE numCompteur IN (SELECT numCompteur FROM abonne WHERE cin='"+CIN+"'))";
           ResultSet resultat=state.executeQuery(sql);
           DefaultTableModel model=(DefaultTableModel) jTable1.getModel();
           Object[] row=new Object[6];

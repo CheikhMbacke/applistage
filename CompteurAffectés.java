@@ -218,25 +218,29 @@ public class CompteurAffectés extends javax.swing.JFrame {
             String sql="SELECT nom,prenom,compteur.numCompteur,abonne.numCompteur,cin from abonne,compteur where"+
                     " compteur.numCompteur=abonne.numCompteur AND compteur.idAbonne<>0";
             ResultSet rs=st.executeQuery(sql);
-            //TableSet
-            jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
+            if(rs.first()){
+               //TableSet
+                jTable1.setModel(new javax.swing.table.DefaultTableModel(
+                new Object [][] {
 
-            },
-            new String [] {
-                "N° Compteur", "Nom", "Prénom", "CIN"
+                },
+                new String [] {
+                    "N° Compteur", "Nom", "Prénom", "CIN"
+                }
+                 ));
+                //END TableSet
+                DefaultTableModel model=(DefaultTableModel) jTable1.getModel();
+                Object[] row = new Object[4];
+                 do{
+                    row[0]=rs.getString("numCompteur");
+                    row[1]=rs.getString("nom");
+                    row[2]=rs.getString("prenom");
+                    row[3]=rs.getString("cin");
+                    model.addRow(row);
+              }while(rs.next()); 
+            }else{
+               JOptionPane.showMessageDialog(null, "Aucun compteur affecté"); 
             }
-             ));
-            //END TableSet
-            DefaultTableModel model=(DefaultTableModel) jTable1.getModel();
-            Object[] row = new Object[4];
-             while(rs.next()){
-                row[0]=rs.getString("numCompteur");
-                row[1]=rs.getString("nom");
-                row[2]=rs.getString("prenom");
-                row[3]=rs.getString("cin");
-                model.addRow(row);
-          }
         } catch (SQLException ex) {
             Logger.getLogger(CompteurAffectés.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -249,25 +253,28 @@ public class CompteurAffectés extends javax.swing.JFrame {
             //Extraire les compteurs non affectés
             conn = ConnectBD.BD();
             Statement st =conn.createStatement();
-            String sql="SELECT numCompteur,idAbonne FROM compteur where idAbonne=0";
+            String sql="SELECT numCompteur FROM compteur where idAbonne=0";
             ResultSet rs=st.executeQuery(sql);
-            //TableSet
-            jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
+            if(rs.first()){
+                //TableSet
+                jTable1.setModel(new javax.swing.table.DefaultTableModel(
+                new Object [][] {
 
-            },
-            new String [] {
-                "N° Compteur", "idAbonne"
+                },
+                new String [] {
+                    "N° Compteur"
+                }
+                ));
+                //END TableSet
+                DefaultTableModel model1=(DefaultTableModel) jTable1.getModel ();
+                Object[] row = new Object[4];
+                 do{
+                    row[0]=rs.getString("numCompteur");
+                    model1.addRow(row);
+              }while(rs.next());
+            }else{
+               JOptionPane.showMessageDialog(null, "Tous les compteurs ont été affectés"); 
             }
-            ));
-            //END TableSet
-            DefaultTableModel model1=(DefaultTableModel) jTable1.getModel ();
-            Object[] row = new Object[4];
-             while(rs.next()){
-                row[0]=rs.getString("numCompteur");
-                row[1]=rs.getString("idAbonne");
-                model1.addRow(row);
-          }
         } catch (SQLException ex) {
             Logger.getLogger(CompteurAffectés.class.getName()).log(Level.SEVERE, null, ex);
         }

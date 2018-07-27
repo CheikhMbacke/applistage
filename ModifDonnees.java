@@ -296,6 +296,14 @@ public class ModifDonnees extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel3MouseClicked
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         msg.setText("");
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+                        new Object [][] {
+                            
+                        },
+                        new String [] {
+                            "N° Compteur", "Nom", "Prénom", "CIN","Tel"
+                        }
+                ));
         try {
             String data=rechercheText.getText();
             Connection conn=ConnectBD.BD();
